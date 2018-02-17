@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5551FA6E0BA292629CE1462E /* Pods_cocaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */; };
+		A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */; };
+		A783B2FD2038A4FC00B5730A /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FC2038A4FC00B5730A /* ChatCell.swift */; };
+		A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */; };
 		A7A6E988203822FA009C8FEA /* DiscoveryV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */; };
 		A7A6E989203822FB009C8FEA /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */; };
 		A7A6E98A203822FB009C8FEA /* RelationshipExtractionV1Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */; };
@@ -26,7 +29,7 @@
 		A7A6E997203822FB009C8FEA /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */; };
 		A7A6E998203822FB009C8FEA /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E987203822FA009C8FEA /* ConversationV1.framework */; };
 		A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54120381B4300DEDF54 /* AppDelegate.swift */; };
-		A7D9D54420381B4300DEDF54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54320381B4300DEDF54 /* ViewController.swift */; };
+		A7D9D54420381B4300DEDF54 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54320381B4300DEDF54 /* InitialViewController.swift */; };
 		A7D9D54720381B4300DEDF54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D54520381B4300DEDF54 /* Main.storyboard */; };
 		A7D9D54920381B4300DEDF54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D54820381B4300DEDF54 /* Assets.xcassets */; };
 		A7D9D54C20381B4300DEDF54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D54A20381B4300DEDF54 /* LaunchScreen.storyboard */; };
@@ -60,6 +63,9 @@
 		68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		776BE800066ADABF12B9BC4E /* Pods-cocaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.release.xcconfig"; sourceTree = "<group>"; };
+		A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		A783B2FC2038A4FC00B5730A /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellStruct.swift; sourceTree = "<group>"; };
 		A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DiscoveryV1.framework; sourceTree = "<group>"; };
 		A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PersonalityInsightsV3.framework; sourceTree = "<group>"; };
 		A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RelationshipExtractionV1Beta.framework; sourceTree = "<group>"; };
@@ -79,7 +85,7 @@
 		A7A6E987203822FA009C8FEA /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConversationV1.framework; sourceTree = "<group>"; };
 		A7D9D53E20381B4200DEDF54 /* cocao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D54120381B4300DEDF54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A7D9D54320381B4300DEDF54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A7D9D54320381B4300DEDF54 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		A7D9D54620381B4300DEDF54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A7D9D54820381B4300DEDF54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A7D9D54B20381B4300DEDF54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -155,6 +161,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A783B3002038B1AA00B5730A /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				A783B2FC2038A4FC00B5730A /* ChatCell.swift */,
+				A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */,
+				A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		A7D9D53520381B4200DEDF54 = {
 			isa = PBXGroup;
 			children = (
@@ -182,8 +198,9 @@
 			children = (
 				A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */,
 				A7D9D54120381B4300DEDF54 /* AppDelegate.swift */,
-				A7D9D54320381B4300DEDF54 /* ViewController.swift */,
+				A7D9D54320381B4300DEDF54 /* InitialViewController.swift */,
 				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
+				A783B3002038B1AA00B5730A /* Chat */,
 				A7D9D54820381B4300DEDF54 /* Assets.xcassets */,
 				A7D9D54A20381B4300DEDF54 /* LaunchScreen.storyboard */,
 				A7D9D54D20381B4300DEDF54 /* Info.plist */,
@@ -565,8 +582,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D9D54420381B4300DEDF54 /* ViewController.swift in Sources */,
+				A7D9D54420381B4300DEDF54 /* InitialViewController.swift in Sources */,
+				A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */,
+				A783B2FD2038A4FC00B5730A /* ChatCell.swift in Sources */,
 				A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */,
+				A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
