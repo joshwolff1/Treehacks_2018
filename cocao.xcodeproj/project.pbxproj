@@ -13,23 +13,7 @@
 		A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */; };
 		A783B3022038B9B200B5730A /* ChatConstantsAndFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B3012038B9B200B5730A /* ChatConstantsAndFunctions.swift */; };
 		A783B3042038BE5000B5730A /* TempHound.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B3032038BE5000B5730A /* TempHound.swift */; };
-		A7A6E988203822FA009C8FEA /* DiscoveryV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */; };
-		A7A6E989203822FB009C8FEA /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */; };
-		A7A6E98A203822FB009C8FEA /* RelationshipExtractionV1Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */; };
-		A7A6E98B203822FB009C8FEA /* RetrieveAndRankV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97A203822F1009C8FEA /* RetrieveAndRankV1.framework */; };
-		A7A6E98C203822FB009C8FEA /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97B203822F2009C8FEA /* SpeechToTextV1.framework */; };
-		A7A6E98D203822FB009C8FEA /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97C203822F2009C8FEA /* Starscream.framework */; };
-		A7A6E98E203822FB009C8FEA /* DialogV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97D203822F3009C8FEA /* DialogV1.framework */; };
-		A7A6E98F203822FB009C8FEA /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97E203822F4009C8FEA /* NaturalLanguageClassifierV1.framework */; };
-		A7A6E990203822FB009C8FEA /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97F203822F4009C8FEA /* TradeoffAnalyticsV1.framework */; };
-		A7A6E991203822FB009C8FEA /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E980203822F5009C8FEA /* VisualRecognitionV3.framework */; };
-		A7A6E992203822FB009C8FEA /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E981203822F6009C8FEA /* ToneAnalyzerV3.framework */; };
-		A7A6E993203822FB009C8FEA /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E982203822F6009C8FEA /* LanguageTranslatorV2.framework */; };
-		A7A6E994203822FB009C8FEA /* NaturalLanguageUnderstandingV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E983203822F7009C8FEA /* NaturalLanguageUnderstandingV1.framework */; };
-		A7A6E995203822FB009C8FEA /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E984203822F8009C8FEA /* TextToSpeechV1.framework */; };
-		A7A6E996203822FB009C8FEA /* PersonalityInsightsV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E985203822F9009C8FEA /* PersonalityInsightsV2.framework */; };
-		A7A6E997203822FB009C8FEA /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */; };
-		A7A6E998203822FB009C8FEA /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E987203822FA009C8FEA /* ConversationV1.framework */; };
+		A783B3422038CE6800B5730A /* BotInteractionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B3412038CE6800B5730A /* BotInteractionViewController.swift */; };
 		A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54120381B4300DEDF54 /* AppDelegate.swift */; };
 		A7D9D54420381B4300DEDF54 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54320381B4300DEDF54 /* InitialViewController.swift */; };
 		A7D9D54720381B4300DEDF54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D54520381B4300DEDF54 /* Main.storyboard */; };
@@ -70,23 +54,7 @@
 		A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellStruct.swift; sourceTree = "<group>"; };
 		A783B3012038B9B200B5730A /* ChatConstantsAndFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatConstantsAndFunctions.swift; sourceTree = "<group>"; };
 		A783B3032038BE5000B5730A /* TempHound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempHound.swift; sourceTree = "<group>"; };
-		A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DiscoveryV1.framework; sourceTree = "<group>"; };
-		A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PersonalityInsightsV3.framework; sourceTree = "<group>"; };
-		A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RelationshipExtractionV1Beta.framework; sourceTree = "<group>"; };
-		A7A6E97A203822F1009C8FEA /* RetrieveAndRankV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RetrieveAndRankV1.framework; sourceTree = "<group>"; };
-		A7A6E97B203822F2009C8FEA /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechToTextV1.framework; sourceTree = "<group>"; };
-		A7A6E97C203822F2009C8FEA /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
-		A7A6E97D203822F3009C8FEA /* DialogV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DialogV1.framework; sourceTree = "<group>"; };
-		A7A6E97E203822F4009C8FEA /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
-		A7A6E97F203822F4009C8FEA /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
-		A7A6E980203822F5009C8FEA /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VisualRecognitionV3.framework; sourceTree = "<group>"; };
-		A7A6E981203822F6009C8FEA /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ToneAnalyzerV3.framework; sourceTree = "<group>"; };
-		A7A6E982203822F6009C8FEA /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LanguageTranslatorV2.framework; sourceTree = "<group>"; };
-		A7A6E983203822F7009C8FEA /* NaturalLanguageUnderstandingV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaturalLanguageUnderstandingV1.framework; sourceTree = "<group>"; };
-		A7A6E984203822F8009C8FEA /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TextToSpeechV1.framework; sourceTree = "<group>"; };
-		A7A6E985203822F9009C8FEA /* PersonalityInsightsV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PersonalityInsightsV2.framework; sourceTree = "<group>"; };
-		A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentConversionV1.framework; sourceTree = "<group>"; };
-		A7A6E987203822FA009C8FEA /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConversationV1.framework; sourceTree = "<group>"; };
+		A783B3412038CE6800B5730A /* BotInteractionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BotInteractionViewController.swift; path = cocao/BotInteractionViewController.swift; sourceTree = SOURCE_ROOT; };
 		A7D9D53E20381B4200DEDF54 /* cocao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D54120381B4300DEDF54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D9D54320381B4300DEDF54 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
@@ -112,24 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7A6E995203822FB009C8FEA /* TextToSpeechV1.framework in Frameworks */,
-				A7A6E98A203822FB009C8FEA /* RelationshipExtractionV1Beta.framework in Frameworks */,
-				A7A6E993203822FB009C8FEA /* LanguageTranslatorV2.framework in Frameworks */,
-				A7A6E994203822FB009C8FEA /* NaturalLanguageUnderstandingV1.framework in Frameworks */,
-				A7A6E998203822FB009C8FEA /* ConversationV1.framework in Frameworks */,
-				A7A6E98D203822FB009C8FEA /* Starscream.framework in Frameworks */,
-				A7A6E98B203822FB009C8FEA /* RetrieveAndRankV1.framework in Frameworks */,
-				A7A6E996203822FB009C8FEA /* PersonalityInsightsV2.framework in Frameworks */,
-				A7A6E988203822FA009C8FEA /* DiscoveryV1.framework in Frameworks */,
 				D41E170C856749D66FBE3546 /* Pods_cocao.framework in Frameworks */,
-				A7A6E98E203822FB009C8FEA /* DialogV1.framework in Frameworks */,
-				A7A6E997203822FB009C8FEA /* DocumentConversionV1.framework in Frameworks */,
-				A7A6E989203822FB009C8FEA /* PersonalityInsightsV3.framework in Frameworks */,
-				A7A6E990203822FB009C8FEA /* TradeoffAnalyticsV1.framework in Frameworks */,
-				A7A6E98C203822FB009C8FEA /* SpeechToTextV1.framework in Frameworks */,
-				A7A6E992203822FB009C8FEA /* ToneAnalyzerV3.framework in Frameworks */,
-				A7A6E98F203822FB009C8FEA /* NaturalLanguageClassifierV1.framework in Frameworks */,
-				A7A6E991203822FB009C8FEA /* VisualRecognitionV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +157,7 @@
 				A7D9D54320381B4300DEDF54 /* InitialViewController.swift */,
 				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
 				A783B3032038BE5000B5730A /* TempHound.swift */,
+				A783B3412038CE6800B5730A /* BotInteractionViewController.swift */,
 				A783B3002038B1AA00B5730A /* Chat */,
 				A7D9D54820381B4300DEDF54 /* Assets.xcassets */,
 				A7D9D54A20381B4300DEDF54 /* LaunchScreen.storyboard */,
@@ -238,23 +190,6 @@
 				68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */,
 				B1CAB23C6C433BE419EBE73F /* Pods_cocaoTests.framework */,
 				C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */,
-				A7A6E987203822FA009C8FEA /* ConversationV1.framework */,
-				A7A6E97D203822F3009C8FEA /* DialogV1.framework */,
-				A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */,
-				A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */,
-				A7A6E982203822F6009C8FEA /* LanguageTranslatorV2.framework */,
-				A7A6E97E203822F4009C8FEA /* NaturalLanguageClassifierV1.framework */,
-				A7A6E983203822F7009C8FEA /* NaturalLanguageUnderstandingV1.framework */,
-				A7A6E985203822F9009C8FEA /* PersonalityInsightsV2.framework */,
-				A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */,
-				A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */,
-				A7A6E97A203822F1009C8FEA /* RetrieveAndRankV1.framework */,
-				A7A6E97B203822F2009C8FEA /* SpeechToTextV1.framework */,
-				A7A6E97C203822F2009C8FEA /* Starscream.framework */,
-				A7A6E984203822F8009C8FEA /* TextToSpeechV1.framework */,
-				A7A6E981203822F6009C8FEA /* ToneAnalyzerV3.framework */,
-				A7A6E97F203822F4009C8FEA /* TradeoffAnalyticsV1.framework */,
-				A7A6E980203822F5009C8FEA /* VisualRecognitionV3.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -593,6 +528,7 @@
 				A783B3042038BE5000B5730A /* TempHound.swift in Sources */,
 				A783B2FD2038A4FC00B5730A /* ChatCell.swift in Sources */,
 				A783B3022038B9B200B5730A /* ChatConstantsAndFunctions.swift in Sources */,
+				A783B3422038CE6800B5730A /* BotInteractionViewController.swift in Sources */,
 				A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */,
 				A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */,
 			);

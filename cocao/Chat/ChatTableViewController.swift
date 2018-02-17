@@ -6,34 +6,23 @@
 //  Copyright © 2018 jw1. All rights reserved.
 //
 
-//
-//  PostTableViewController.swift
-//  Spontit
-//
-//  Created by Josh Wolff on 12/2/17.
-//  Copyright © 2017 jw1. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 class ChatTableViewController : UITableViewController {
     
-    var chats : [ChatMessage]?
+    var chats : [ChatMessage] = []
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        // TEMPORARY CHATS
-        self.chats = ChatMessage.fetchChats()
-        
-        // self.refreshPosts()
+        self.prepareTableView()
+        NotificationCenter.default.addObserver(self, selector: #selector(loadChats), name: NSNotification.Name(rawValue: "loadChats"), object: nil)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -42,13 +31,37 @@ class ChatTableViewController : UITableViewController {
         }
     }
     
+    func prepareTableView () {
+        tableView.allowsSelection = false
+        tableView.reloadData()
+        tableView.separatorStyle  = .none
+        
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        loadConversation()
+    }
+    
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:  "ChatCell", for: indexPath) as! ChatCell
-        cell.chatMessage = self.chats?[indexPath.row]
-        
+        cell.chatMessage = self.chats[indexPath.row]
         return
-        
+    }
+    
+    func loadConversation() {
+        print("this has been called343")
+        self.chats = []
+        // TEMPORARY CHATS
+        self.chats = ChatMessage.fetchChats()
+        self.tableView.reloadData()
+    }
+    
+    @objc func loadChats(notification: NSNotification) {
+        print("this has been called")
+        self.chats = []
+        // TEMPORARY CHATS
+        self.chats = ChatMessage.fetchChats()
+        self.tableView.reloadData()
     }
     
 }
@@ -58,8 +71,8 @@ class ChatTableViewController : UITableViewController {
 extension ChatTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (chats != nil) || (chats?.count != 0) {
-            return (chats?.count)!
+        if (self.chats.count != 0) {
+            return self.chats.count
         } else {
             return 0
         }
@@ -68,7 +81,7 @@ extension ChatTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:  "ChatCell", for: indexPath) as! ChatCell
-        cell.chatMessage = self.chats?[indexPath.row]
+        cell.chatMessage = self.chats[indexPath.row]
         return cell
     }
 }

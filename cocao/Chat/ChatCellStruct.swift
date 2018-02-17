@@ -18,7 +18,7 @@ struct ChatMessage {
     
     static func fetchChats() -> [ChatMessage]
     {
-        let chatMessages = [ChatMessage]()
+        var chatMessages = [ChatMessage]()
         
         let message1 = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: "Hello, how are you doing?", _chatId: "1")
         chatMessages.append(message1)

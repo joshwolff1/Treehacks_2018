@@ -10,12 +10,20 @@ import Foundation
 import UIKit
 
 class ChatCell: UITableViewCell {
-
-    @IBOutlet weak var leftConstraint: NSLayoutConstraint!
-    @IBOutlet weak var rightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var computerIcon: UIImageView!
+    @IBOutlet weak var humanIcon: UIImageView!
+    @IBOutlet weak var separatorView: UIView!
     
-    // create rest of outlets
+    @IBOutlet weak var chatText: UILabel!
+    
+    @IBOutlet var leftTextConstraint: NSLayoutConstraint!
+    @IBOutlet var leftImageToTextConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var rightTextConstraint: NSLayoutConstraint!
+    @IBOutlet var rightImageToTextConstraint: NSLayoutConstraint!
+    
+    @IBOutlet var textWidth: NSLayoutConstraint!
 
     var chatMessage : ChatMessage!{
         didSet {
@@ -24,7 +32,29 @@ class ChatCell: UITableViewCell {
     }
 
     func updateUI() {
+        
+        self.separatorView.isHidden = true
+        
+        self.chatText?.layer.cornerRadius = 5
+        self.chatText?.layer.masksToBounds = true
+        self.chatText?.text = " " + self.chatMessage._message!
+        
+        if self.chatMessage._userId != ChatConstantsAndFunctions.computerId {
+            
+            let tempText = self.rightTextConstraint.constant
+            let tempImage = self.rightImageToTextConstraint.constant
+            
+            self.rightTextConstraint.constant = self.leftTextConstraint.constant
+            self.rightImageToTextConstraint.constant = self.leftImageToTextConstraint.constant
+            
+            self.leftTextConstraint.constant = tempText
+            self.leftImageToTextConstraint.constant = tempImage
+            
+            self.computerIcon.isHidden = true
 
+        } else {
+            self.humanIcon.isHidden = true
+        }
     }
 
 }
