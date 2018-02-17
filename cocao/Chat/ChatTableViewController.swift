@@ -24,8 +24,9 @@ class ChatTableViewController : UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        // TEMPORARY CHATS
         
+        // TEMPORARY CHATS
+        self.chats = ChatMessage.fetchChats()
         
         // self.refreshPosts()
         
@@ -58,9 +59,9 @@ extension ChatTableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (chats != nil) || (chats?.count != 0) {
-            return (chats?.count)! + 1
+            return (chats?.count)!
         } else {
-            return 1
+            return 0
         }
     }
     

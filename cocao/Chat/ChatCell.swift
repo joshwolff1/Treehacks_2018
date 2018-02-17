@@ -13,6 +13,9 @@ class ChatCell: UITableViewCell {
 
     @IBOutlet weak var leftConstraint: NSLayoutConstraint!
     @IBOutlet weak var rightConstraint: NSLayoutConstraint!
+    
+    
+    // create rest of outlets
 
     var chatMessage : ChatMessage!{
         didSet {
