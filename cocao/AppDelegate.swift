@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import ConversationV1
+import DocumentConversionV1
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

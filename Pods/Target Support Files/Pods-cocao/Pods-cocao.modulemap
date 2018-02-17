@@ -1,0 +1,6 @@
+framework module Pods_cocao {
+  umbrella header "Pods-cocao-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5551FA6E0BA292629CE1462E /* Pods_cocaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */; };
+		A7A6E988203822FA009C8FEA /* DiscoveryV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */; };
+		A7A6E989203822FB009C8FEA /* PersonalityInsightsV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */; };
+		A7A6E98A203822FB009C8FEA /* RelationshipExtractionV1Beta.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */; };
+		A7A6E98B203822FB009C8FEA /* RetrieveAndRankV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97A203822F1009C8FEA /* RetrieveAndRankV1.framework */; };
+		A7A6E98C203822FB009C8FEA /* SpeechToTextV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97B203822F2009C8FEA /* SpeechToTextV1.framework */; };
+		A7A6E98D203822FB009C8FEA /* Starscream.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97C203822F2009C8FEA /* Starscream.framework */; };
+		A7A6E98E203822FB009C8FEA /* DialogV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97D203822F3009C8FEA /* DialogV1.framework */; };
+		A7A6E98F203822FB009C8FEA /* NaturalLanguageClassifierV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97E203822F4009C8FEA /* NaturalLanguageClassifierV1.framework */; };
+		A7A6E990203822FB009C8FEA /* TradeoffAnalyticsV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E97F203822F4009C8FEA /* TradeoffAnalyticsV1.framework */; };
+		A7A6E991203822FB009C8FEA /* VisualRecognitionV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E980203822F5009C8FEA /* VisualRecognitionV3.framework */; };
+		A7A6E992203822FB009C8FEA /* ToneAnalyzerV3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E981203822F6009C8FEA /* ToneAnalyzerV3.framework */; };
+		A7A6E993203822FB009C8FEA /* LanguageTranslatorV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E982203822F6009C8FEA /* LanguageTranslatorV2.framework */; };
+		A7A6E994203822FB009C8FEA /* NaturalLanguageUnderstandingV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E983203822F7009C8FEA /* NaturalLanguageUnderstandingV1.framework */; };
+		A7A6E995203822FB009C8FEA /* TextToSpeechV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E984203822F8009C8FEA /* TextToSpeechV1.framework */; };
+		A7A6E996203822FB009C8FEA /* PersonalityInsightsV2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E985203822F9009C8FEA /* PersonalityInsightsV2.framework */; };
+		A7A6E997203822FB009C8FEA /* DocumentConversionV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */; };
+		A7A6E998203822FB009C8FEA /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7A6E987203822FA009C8FEA /* ConversationV1.framework */; };
 		A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54120381B4300DEDF54 /* AppDelegate.swift */; };
 		A7D9D54420381B4300DEDF54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D54320381B4300DEDF54 /* ViewController.swift */; };
 		A7D9D54720381B4300DEDF54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D54520381B4300DEDF54 /* Main.storyboard */; };
@@ -14,6 +32,9 @@
 		A7D9D54C20381B4300DEDF54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D54A20381B4300DEDF54 /* LaunchScreen.storyboard */; };
 		A7D9D55720381B4300DEDF54 /* cocaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D55620381B4300DEDF54 /* cocaoTests.swift */; };
 		A7D9D56220381B4300DEDF54 /* cocaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D56120381B4300DEDF54 /* cocaoUITests.swift */; };
+		A7D9D57020381B8E00DEDF54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */; };
+		D41E170C856749D66FBE3546 /* Pods_cocao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */; };
+		D7359309AC5BF31FC703CC4A /* Pods_cocaoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CAB23C6C433BE419EBE73F /* Pods_cocaoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +55,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0ED7281154B0F425EED79FE3 /* Pods-cocaoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		33A2927F8CE5C976EB9651C6 /* Pods-cocao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.debug.xcconfig"; sourceTree = "<group>"; };
+		68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		776BE800066ADABF12B9BC4E /* Pods-cocaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.release.xcconfig"; sourceTree = "<group>"; };
+		A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DiscoveryV1.framework; sourceTree = "<group>"; };
+		A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PersonalityInsightsV3.framework; sourceTree = "<group>"; };
+		A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RelationshipExtractionV1Beta.framework; sourceTree = "<group>"; };
+		A7A6E97A203822F1009C8FEA /* RetrieveAndRankV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RetrieveAndRankV1.framework; sourceTree = "<group>"; };
+		A7A6E97B203822F2009C8FEA /* SpeechToTextV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SpeechToTextV1.framework; sourceTree = "<group>"; };
+		A7A6E97C203822F2009C8FEA /* Starscream.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Starscream.framework; sourceTree = "<group>"; };
+		A7A6E97D203822F3009C8FEA /* DialogV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DialogV1.framework; sourceTree = "<group>"; };
+		A7A6E97E203822F4009C8FEA /* NaturalLanguageClassifierV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaturalLanguageClassifierV1.framework; sourceTree = "<group>"; };
+		A7A6E97F203822F4009C8FEA /* TradeoffAnalyticsV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TradeoffAnalyticsV1.framework; sourceTree = "<group>"; };
+		A7A6E980203822F5009C8FEA /* VisualRecognitionV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VisualRecognitionV3.framework; sourceTree = "<group>"; };
+		A7A6E981203822F6009C8FEA /* ToneAnalyzerV3.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ToneAnalyzerV3.framework; sourceTree = "<group>"; };
+		A7A6E982203822F6009C8FEA /* LanguageTranslatorV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LanguageTranslatorV2.framework; sourceTree = "<group>"; };
+		A7A6E983203822F7009C8FEA /* NaturalLanguageUnderstandingV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NaturalLanguageUnderstandingV1.framework; sourceTree = "<group>"; };
+		A7A6E984203822F8009C8FEA /* TextToSpeechV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TextToSpeechV1.framework; sourceTree = "<group>"; };
+		A7A6E985203822F9009C8FEA /* PersonalityInsightsV2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PersonalityInsightsV2.framework; sourceTree = "<group>"; };
+		A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DocumentConversionV1.framework; sourceTree = "<group>"; };
+		A7A6E987203822FA009C8FEA /* ConversationV1.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ConversationV1.framework; sourceTree = "<group>"; };
 		A7D9D53E20381B4200DEDF54 /* cocao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cocao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D54120381B4300DEDF54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D9D54320381B4300DEDF54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +90,11 @@
 		A7D9D55D20381B4300DEDF54 /* cocaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cocaoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D9D56120381B4300DEDF54 /* cocaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocaoUITests.swift; sourceTree = "<group>"; };
 		A7D9D56320381B4300DEDF54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		B1CAB23C6C433BE419EBE73F /* Pods_cocaoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocaoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocaoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE843995D66052D7A263C357 /* Pods-cocaoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoTests/Pods-cocaoTests.release.xcconfig"; sourceTree = "<group>"; };
+		F513143C05ADE2C32BF540AD /* Pods-cocaoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoTests/Pods-cocaoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +102,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7A6E995203822FB009C8FEA /* TextToSpeechV1.framework in Frameworks */,
+				A7A6E98A203822FB009C8FEA /* RelationshipExtractionV1Beta.framework in Frameworks */,
+				A7A6E993203822FB009C8FEA /* LanguageTranslatorV2.framework in Frameworks */,
+				A7A6E994203822FB009C8FEA /* NaturalLanguageUnderstandingV1.framework in Frameworks */,
+				A7A6E998203822FB009C8FEA /* ConversationV1.framework in Frameworks */,
+				A7A6E98D203822FB009C8FEA /* Starscream.framework in Frameworks */,
+				A7A6E98B203822FB009C8FEA /* RetrieveAndRankV1.framework in Frameworks */,
+				A7A6E996203822FB009C8FEA /* PersonalityInsightsV2.framework in Frameworks */,
+				A7A6E988203822FA009C8FEA /* DiscoveryV1.framework in Frameworks */,
+				D41E170C856749D66FBE3546 /* Pods_cocao.framework in Frameworks */,
+				A7A6E98E203822FB009C8FEA /* DialogV1.framework in Frameworks */,
+				A7A6E997203822FB009C8FEA /* DocumentConversionV1.framework in Frameworks */,
+				A7A6E989203822FB009C8FEA /* PersonalityInsightsV3.framework in Frameworks */,
+				A7A6E990203822FB009C8FEA /* TradeoffAnalyticsV1.framework in Frameworks */,
+				A7A6E98C203822FB009C8FEA /* SpeechToTextV1.framework in Frameworks */,
+				A7A6E992203822FB009C8FEA /* ToneAnalyzerV3.framework in Frameworks */,
+				A7A6E98F203822FB009C8FEA /* NaturalLanguageClassifierV1.framework in Frameworks */,
+				A7A6E991203822FB009C8FEA /* VisualRecognitionV3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7359309AC5BF31FC703CC4A /* Pods_cocaoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +135,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5551FA6E0BA292629CE1462E /* Pods_cocaoUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C6D015F176105A965E5CA45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				33A2927F8CE5C976EB9651C6 /* Pods-cocao.debug.xcconfig */,
+				87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */,
+				F513143C05ADE2C32BF540AD /* Pods-cocaoTests.debug.xcconfig */,
+				CE843995D66052D7A263C357 /* Pods-cocaoTests.release.xcconfig */,
+				0ED7281154B0F425EED79FE3 /* Pods-cocaoUITests.debug.xcconfig */,
+				776BE800066ADABF12B9BC4E /* Pods-cocaoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A7D9D53520381B4200DEDF54 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +162,8 @@
 				A7D9D55520381B4300DEDF54 /* cocaoTests */,
 				A7D9D56020381B4300DEDF54 /* cocaoUITests */,
 				A7D9D53F20381B4300DEDF54 /* Products */,
+				7C6D015F176105A965E5CA45 /* Pods */,
+				C10983E55F42769755321DF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,6 +180,7 @@
 		A7D9D54020381B4300DEDF54 /* cocao */ = {
 			isa = PBXGroup;
 			children = (
+				A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */,
 				A7D9D54120381B4300DEDF54 /* AppDelegate.swift */,
 				A7D9D54320381B4300DEDF54 /* ViewController.swift */,
 				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
@@ -125,6 +209,33 @@
 			path = cocaoUITests;
 			sourceTree = "<group>";
 		};
+		C10983E55F42769755321DF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */,
+				B1CAB23C6C433BE419EBE73F /* Pods_cocaoTests.framework */,
+				C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */,
+				A7A6E987203822FA009C8FEA /* ConversationV1.framework */,
+				A7A6E97D203822F3009C8FEA /* DialogV1.framework */,
+				A7A6E977203822F0009C8FEA /* DiscoveryV1.framework */,
+				A7A6E986203822F9009C8FEA /* DocumentConversionV1.framework */,
+				A7A6E982203822F6009C8FEA /* LanguageTranslatorV2.framework */,
+				A7A6E97E203822F4009C8FEA /* NaturalLanguageClassifierV1.framework */,
+				A7A6E983203822F7009C8FEA /* NaturalLanguageUnderstandingV1.framework */,
+				A7A6E985203822F9009C8FEA /* PersonalityInsightsV2.framework */,
+				A7A6E978203822F0009C8FEA /* PersonalityInsightsV3.framework */,
+				A7A6E979203822F0009C8FEA /* RelationshipExtractionV1Beta.framework */,
+				A7A6E97A203822F1009C8FEA /* RetrieveAndRankV1.framework */,
+				A7A6E97B203822F2009C8FEA /* SpeechToTextV1.framework */,
+				A7A6E97C203822F2009C8FEA /* Starscream.framework */,
+				A7A6E984203822F8009C8FEA /* TextToSpeechV1.framework */,
+				A7A6E981203822F6009C8FEA /* ToneAnalyzerV3.framework */,
+				A7A6E97F203822F4009C8FEA /* TradeoffAnalyticsV1.framework */,
+				A7A6E980203822F5009C8FEA /* VisualRecognitionV3.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +243,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D9D56620381B4300DEDF54 /* Build configuration list for PBXNativeTarget "cocao" */;
 			buildPhases = (
+				A659A0F2D47552A9B3EC92AD /* [CP] Check Pods Manifest.lock */,
 				A7D9D53A20381B4200DEDF54 /* Sources */,
 				A7D9D53B20381B4200DEDF54 /* Frameworks */,
 				A7D9D53C20381B4200DEDF54 /* Resources */,
+				97E93E795108058CEF964CA0 /* [CP] Embed Pods Frameworks */,
+				AD73B6EBE6D2FE1138BCCCD0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D9D56920381B4300DEDF54 /* Build configuration list for PBXNativeTarget "cocaoTests" */;
 			buildPhases = (
+				6142D008E1C5861EE9B37012 /* [CP] Check Pods Manifest.lock */,
 				A7D9D54E20381B4300DEDF54 /* Sources */,
 				A7D9D54F20381B4300DEDF54 /* Frameworks */,
 				A7D9D55020381B4300DEDF54 /* Resources */,
+				519DCC600F36297DAA751A09 /* [CP] Embed Pods Frameworks */,
+				F2B7D79DAA1491BBEF43518C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +284,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D9D56C20381B4300DEDF54 /* Build configuration list for PBXNativeTarget "cocaoUITests" */;
 			buildPhases = (
+				4CDFB99E754FBFDB549E2DF4 /* [CP] Check Pods Manifest.lock */,
 				A7D9D55920381B4300DEDF54 /* Sources */,
 				A7D9D55A20381B4300DEDF54 /* Frameworks */,
 				A7D9D55B20381B4300DEDF54 /* Resources */,
+				C4F4A54233A542DF016584CF /* [CP] Embed Pods Frameworks */,
+				B205FB9958845736A783D0FF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D9D57020381B8E00DEDF54 /* awsconfiguration.json in Resources */,
 				A7D9D54C20381B4300DEDF54 /* LaunchScreen.storyboard in Resources */,
 				A7D9D54920381B4300DEDF54 /* Assets.xcassets in Resources */,
 				A7D9D54720381B4300DEDF54 /* Main.storyboard in Resources */,
@@ -253,6 +374,191 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4CDFB99E754FBFDB549E2DF4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocaoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		519DCC600F36297DAA751A09 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocaoTests/Pods-cocaoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6142D008E1C5861EE9B37012 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocaoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97E93E795108058CEF964CA0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cocao/Pods-cocao-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSRekognition/AWSRekognition.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/HoundifySDK/HoundifySDK.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSRekognition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HoundifySDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocao/Pods-cocao-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A659A0F2D47552A9B3EC92AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-cocao-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD73B6EBE6D2FE1138BCCCD0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-cocao/Pods-cocao-resources.sh",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GINInviteResources.bundle",
+				"${PODS_ROOT}/FirebaseInvites/Resources/GPPACLPickerResources.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GINInviteResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GPPACLPickerResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocao/Pods-cocao-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B205FB9958845736A783D0FF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4F4A54233A542DF016584CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2B7D79DAA1491BBEF43518C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cocaoTests/Pods-cocaoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A7D9D53A20381B4200DEDF54 /* Sources */ = {
@@ -424,10 +730,15 @@
 		};
 		A7D9D56720381B4300DEDF54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33A2927F8CE5C976EB9651C6 /* Pods-cocao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W24B4F4VA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = cocao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jw1.cocao;
@@ -439,10 +750,15 @@
 		};
 		A7D9D56820381B4300DEDF54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W24B4F4VA;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = cocao/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jw1.cocao;
@@ -454,6 +770,7 @@
 		};
 		A7D9D56A20381B4300DEDF54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F513143C05ADE2C32BF540AD /* Pods-cocaoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -471,6 +788,7 @@
 		};
 		A7D9D56B20381B4300DEDF54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE843995D66052D7A263C357 /* Pods-cocaoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +806,7 @@
 		};
 		A7D9D56D20381B4300DEDF54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0ED7281154B0F425EED79FE3 /* Pods-cocaoUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -504,6 +823,7 @@
 		};
 		A7D9D56E20381B4300DEDF54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 776BE800066ADABF12B9BC4E /* Pods-cocaoUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
