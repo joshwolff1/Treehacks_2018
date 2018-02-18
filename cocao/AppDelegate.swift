@@ -47,12 +47,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Hound.setClientID("ewb8Zfanqv_n2FmfW5bObA==")
         Hound.setClientKey("gsqdIB8K6qMLx3dNNW9rKTnxPZc9YE4HIVGBGIcWVxjaVs78V5IJi3aJDyk3sOXZ90PXmEjDvJbccRVMNgiTnQ==")
         
-        return true
-    }
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions:
-        [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         print("didFinishLaunching:")
         
         // set up logging for AWS and Cognito
