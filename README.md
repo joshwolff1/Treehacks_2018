@@ -1,3 +1,5 @@
+# cocao chatbot
+
 Christopher Cao (USC), Josh Wolff (Stanford) - Devpost: https://devpost.com/software/cocao
 
 In brainstorming ideas, we realized that one of the major pain points in healthcare is connecting underserved patients with providers. We were inspired by stories of undocumented immigrants who struggle to get the healthcare they need due to fears of deportation. Among many other, three of the main pain points for this population in healthcare are 1) they are not aware that many providers are willing to offer their services to undocumented immigrants and do not have to report any information to Immigration Security Enforcement, 2) language barriers in getting this information, and 3) an inability to trust others due to fears of deportation. The last point holds especially true in recent times with the Trump administration. Thus, we wanted to create a chatbot interface that enables undocumented immigrants and other users to get access to vital information regarding willing providers in the nearby area. 
