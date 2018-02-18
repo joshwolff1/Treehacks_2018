@@ -98,7 +98,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func startRecording() {
         
-        self.isFinalQuery = false
+//        self.isFinalQuery = false
         
         let audioEngine = AVAudioEngine()
         
@@ -129,7 +129,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             
             var isFinal = false
             
-            if result != nil {
+            if ((result != nil) && (!self.isFinalQuery)) {
                 
                 print("HERE IS THE RESULT")
                 print("\(result?.bestTranscription.formattedString)")
@@ -140,6 +140,8 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             }
             // error != nil
             if self.isFinalQuery {
+                audioEngine.stop()
+                audioEngine.reset()
                 audioEngine.stop()
                 print("didStop")
                 inputNode.removeTap(onBus: 0)
@@ -256,6 +258,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
                     if houndServer != nil, let dictionary = dictionary, let response = houndServer {
                         if let commandResult = response.allResults?.firstObject() as? HoundDataCommandResult {
                             print(commandResult["SpokenResponse"]!)
+                            self.translateResultToLanguage(text: commandResult["SpokenResponse"]! as! String)
                         }
                     
                 }
@@ -280,6 +283,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.microphoneButton.isHidden = false
         self.stopRecordingButton.isHidden = true
         self.isFinalQuery = true
+        
         print("TRANSLATION")
         print(self.queryText)
         

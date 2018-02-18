@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 
 
-struct ChatMessage {
+struct ChatMessage : Equatable {
+    
+    static func ==(lhs: ChatMessage, rhs: ChatMessage) -> Bool {
+        return (lhs._userId == rhs._userId) && (lhs._message == rhs._message)
+    }
+    
     
     var _userId: String?
     var _message: String?

@@ -57,6 +57,7 @@ class ChatTableViewController : UITableViewController {
         self.chats = []
         // TEMPORARY CHATS
         self.chats = ChatMessage.fetchChats()
+        self.chats = self.chats.removeDuplicates()
         self.tableView.reloadData()
     }
     
@@ -64,8 +65,10 @@ class ChatTableViewController : UITableViewController {
         self.chats = []
         // TEMPORARY CHATS
         self.chats = ChatMessage.fetchChats()
-        self.tableView.reloadData()
-        self.tableView.scrollToRow(at: IndexPath(row: (self.chats.count - 1), section: 0), at: UITableViewScrollPosition.middle, animated: false)
+        OperationQueue.main.addOperation {
+            self.tableView.reloadData()
+            self.tableView.scrollToRow(at: IndexPath(row: (self.chats.count - 1), section: 0), at: UITableViewScrollPosition.middle, animated: false)
+        }
     }
     
 }
@@ -88,5 +91,19 @@ extension ChatTableViewController {
         cell.chatMessage = self.chats[indexPath.row]
         return cell
     }
+}
+
+extension Array where Element:Equatable {
+    
+    func removeDuplicates() -> [Element] {
+        var result = [Element]()
+        for value in self {
+            if result.contains(value) == false {
+                result.append(value)
+            }
+        }
+        return result
+    }
+    
 }
 
