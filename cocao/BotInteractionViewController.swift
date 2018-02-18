@@ -145,8 +145,6 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             // error != nil
             if self.isFinalQuery {
                 audioEngine.stop()
-                audioEngine.reset()
-                audioEngine.stop()
                 print("didStop")
                 inputNode.removeTap(onBus: 0)
                 
