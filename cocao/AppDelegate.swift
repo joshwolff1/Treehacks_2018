@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let identityPoolId:String = self.cognitoConfig!.getIdentityPoolId()
         
         // FOR IAM
-        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: AWSRegionType.USEast1, identityPoolId: identityPoolId, identityProviderManager: "" as? AWSIdentityProviderManager)
+        let credentialsProvider = AWSCognitoCredentialsProvider(regionType: AWSRegionType.USEast2, identityPoolId: identityPoolId, identityProviderManager: "" as? AWSIdentityProviderManager)
         // AWSServiceManager.default().defaultServiceConfiguration = serviceConfiguration
         // AWSServiceManager.default().defaultServiceConfiguration = configuration
         

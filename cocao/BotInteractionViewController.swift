@@ -12,8 +12,6 @@ import Speech
 import HoundifySDK
 import ROGoogleTranslate
 
-// AWS Polly Imports
-import AWSPolly
 import AVFoundation
 
 class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegate, SFSpeechRecognizerDelegate {
@@ -29,8 +27,8 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.koreanMicrosoft))
-    private let languageChosen = ChatConstantsAndFunctions.koreanMicrosoft
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.englishLanguageMicrosoft))
+    private let languageChosen = ChatConstantsAndFunctions.englishLanguageMicrosoft
     // ADD PICKER AND DELEGATE
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -202,19 +200,22 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         }
     }
     
-    func translateResultToLanguage (text: String) {
-        //        let error : NSError?
-        //        let result : String?
-        //        let urlResponse : URLResponse?
-        //        print("TRANSLATING QUERY")
-        //        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
-        //            print("completion handler")
-        //            print("\(String(describing: result))")
-        //        }
+    // Amazon Polly stuff
+    func textToSpeech (text: String, language: String) {
+        let synth = AVSpeechSynthesizer()
+        var myUtterance = AVSpeechUtterance(string: text)
+        myUtterance.voice = AVSpeechSynthesisVoice(language: language)
+        myUtterance.rate = 0.4
+        synth.speak(myUtterance)
         
+    }
+    
+    func translateResultToLanguage (text: String) {
         var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.englishLanguageMicrosoft,
                                              target: self.languageChosen,
                                              text:   text)
+        
+        
         
         let translator = ROGoogleTranslate()
         translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
@@ -223,6 +224,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         translator.translate(params: params) { (result) in
             print("WITHIN TRANSLATION FUNCITON")
             print("Translation: \(result)")
+            self.textToSpeech(text: result, language: "en-US")
             let newChat = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: result, _chatId: String(describing: ChatMessage.fetchChats().count))
             ChatConstantsAndFunctions.newChats.append(newChat)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)

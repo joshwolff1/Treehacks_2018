@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5551FA6E0BA292629CE1462E /* Pods_cocaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */; };
-		83BE4C6E20396D9A0055F54F /* awslist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BE4C6D20396D9A0055F54F /* awslist.plist */; };
+		83BE4C6E20396D9A0055F54F /* CognitoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BE4C6D20396D9A0055F54F /* CognitoConfig.plist */; };
 		83BE4C7020396E360055F54F /* awslist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE4C6F20396E360055F54F /* awslist.swift */; };
 		A7099D7B20394ECF0072E3BF /* MicrosoftTranslateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7099D7A20394ECF0072E3BF /* MicrosoftTranslateAPI.swift */; };
 		A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */; };
@@ -53,7 +53,7 @@
 		68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		776BE800066ADABF12B9BC4E /* Pods-cocaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		83BE4C67203941E80055F54F /* cocao-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocao-Bridging-Header.h"; sourceTree = "<group>"; };
-		83BE4C6D20396D9A0055F54F /* awslist.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = awslist.plist; sourceTree = "<group>"; };
+		83BE4C6D20396D9A0055F54F /* CognitoConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CognitoConfig.plist; sourceTree = "<group>"; };
 		83BE4C6F20396E360055F54F /* awslist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awslist.swift; sourceTree = "<group>"; };
 		87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.release.xcconfig"; sourceTree = "<group>"; };
 		A7099D7A20394ECF0072E3BF /* MicrosoftTranslateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftTranslateAPI.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			children = (
 				A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */,
 				A7D9D54120381B4300DEDF54 /* AppDelegate.swift */,
-				83BE4C6D20396D9A0055F54F /* awslist.plist */,
+				83BE4C6D20396D9A0055F54F /* CognitoConfig.plist */,
 				83BE4C6F20396E360055F54F /* awslist.swift */,
 				A7D9D54320381B4300DEDF54 /* InitialViewController.swift */,
 				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
@@ -329,7 +329,7 @@
 				A7D9D54C20381B4300DEDF54 /* LaunchScreen.storyboard in Resources */,
 				A7D9D54920381B4300DEDF54 /* Assets.xcassets in Resources */,
 				A7D9D54720381B4300DEDF54 /* Main.storyboard in Resources */,
-				83BE4C6E20396D9A0055F54F /* awslist.plist in Resources */,
+				83BE4C6E20396D9A0055F54F /* CognitoConfig.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
