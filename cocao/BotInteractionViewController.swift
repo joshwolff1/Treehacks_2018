@@ -11,10 +11,10 @@ import UIKit
 import Speech
 import HoundifySDK
 import ROGoogleTranslate
-
+import CoreLocation
 import AVFoundation
 
-class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegate, SFSpeechRecognizerDelegate {
+class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegate, SFSpeechRecognizerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var botGraphic: UIImageView!
@@ -27,17 +27,20 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.englishLanguageMicrosoft))
-    private let languageChosen = ChatConstantsAndFunctions.englishLanguageMicrosoft
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.spanishMicrosoft))
+    private let languageChosen = ChatConstantsAndFunctions.spanishMicrosoft
     // ADD PICKER AND DELEGATE
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     
     private var queryText = ""
     private var translatedText = ""
-    
+    private var queryResponse = ""
     private var isFinalQuery = false
-
+    
+    private var locManager = CLLocationManager()
+    private var currentLocation : CLLocation!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -46,7 +49,47 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.setUpUI()
         self.setUpSpeechRecognition()
         
+        self.setUpLocation()
+        
     }
+    
+    //    MARK:- LOCATION PROTOCOL AND RELEVANT CODE
+    
+    func setUpLocation () {
+        locManager.delegate = self
+        locManager.desiredAccuracy = kCLLocationAccuracyBest
+        locManager.requestAlwaysAuthorization()
+        locManager.startUpdatingLocation()
+        locManager.requestLocation()
+        locManager.distanceFilter = kCLLocationAccuracyBest
+        self.locManager.requestLocation()
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        self.currentLocation = locManager.location
+        
+        if (self.currentLocation == nil) {return}
+        
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedAlways {
+            locManager.requestLocation()
+        }
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        let alertController = UIAlertController(title: "Location Error", message: "Failed to update current location.", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil)
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        return
+    }
+    
+    //    MARK:- SPEECH RECOGNITION FUNCTIONS
     
     func setUpSpeechRecognition () {
         
@@ -88,8 +131,8 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueEmbedChat") {
-//            let embeddedChatViewController = segue.destination  as! ChatTableViewController
-//            embeddedChatViewController.loadConversation()
+            //            let embeddedChatViewController = segue.destination  as! ChatTableViewController
+            //            embeddedChatViewController.loadConversation()
         }
     }
     
@@ -100,7 +143,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func startRecording() {
         
-//        self.isFinalQuery = false
+        //        self.isFinalQuery = false
         
         let audioEngine = AVAudioEngine()
         
@@ -176,31 +219,58 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     func translateQueryToEnglish (text: String) {
-//        let error : NSError?
-//        let result : String?
-//        let urlResponse : URLResponse?
-//        print("TRANSLATING QUERY")
-//        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
-//            print("completion handler")
-//            print("\(String(describing: result))")
-//        }
+        //        let error : NSError?
+        //        let result : String?
+        //        let urlResponse : URLResponse?
+        //        print("TRANSLATING QUERY")
+        //        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
+        //            print("completion handler")
+        //            print("\(String(describing: result))")
+        //        }
         
         var params = ROGoogleTranslateParams(source: self.languageChosen,
                                              target: ChatConstantsAndFunctions.englishLanguageMicrosoft,
                                              text:   text)
-
+        
         let translator = ROGoogleTranslate()
         translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
         print("\(params)")
         translator.translate(params: params) { (result) in
-            self.queryHoundify(aQuery: result)
             print("WITHIN TRANSLATION FUNCITON")
             print("Translation: \(result)")
             self.translatedText = result
         }
     }
     
-    // Amazon Polly stuff
+    func translateResultToLanguage (text: String) {
+        //        let error : NSError?
+        //        let result : String?
+        //        let urlResponse : URLResponse?
+        //        print("TRANSLATING QUERY")
+        //        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
+        //            print("completion handler")
+        //            print("\(String(describing: result))")
+        //        }
+        
+        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.englishLanguageMicrosoft,
+                                             target: self.languageChosen,
+                                             text:   text)
+        
+        let translator = ROGoogleTranslate()
+        translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
+        print("\(params)")
+        
+        translator.translate(params: params) { (result) in
+            let queryResponseChat = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: result, _chatId: String(describing: ChatMessage.fetchChats().count))
+            ChatConstantsAndFunctions.newChats.append(queryResponseChat)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
+            self.textToSpeech(text: result, language: self.languageChosen)
+            print("WITHIN TRANSLATION FUNCITON")
+            print("Translation: \(result)")
+        }
+    }
+    
+    // Text To Speech
     func textToSpeech (text: String, language: String) {
         let synth = AVSpeechSynthesizer()
         var myUtterance = AVSpeechUtterance(string: text)
@@ -210,68 +280,81 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         
     }
     
-    func translateResultToLanguage (text: String) {
-        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.englishLanguageMicrosoft,
-                                             target: self.languageChosen,
-                                             text:   text)
-        
-        
-        
-        let translator = ROGoogleTranslate()
-        translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
-        print("\(params)")
-        
-        translator.translate(params: params) { (result) in
-            print("WITHIN TRANSLATION FUNCITON")
-            print("Translation: \(result)")
-            self.textToSpeech(text: result, language: "en-US")
-            let newChat = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: result, _chatId: String(describing: ChatMessage.fetchChats().count))
-            ChatConstantsAndFunctions.newChats.append(newChat)
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
-        }
-    }
-    
-    
-//    func recordHoundify () {
-//        Houndify.instance().presentListeningViewController(in: self,
-//                                                           from: nil,
-//                                                           style: nil,
-//                                                           requestInfo: [:],
-//                                                           responseHandler:
-//            { (error: Error?, response: Any?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
-//
-//                var responseData : String = ""
-//                if  let serverData = response as? HoundDataHoundServer,
-//                    let commandResult = serverData.allResults?.firstObject() as? HoundDataCommandResult,
-//                    let nativeData = commandResult["NativeData"]
-//                {
-//                    let myStringDict = nativeData as? [String : AnyObject]
-//                    responseData = myStringDict!["FormattedTranscription"]! as! String
-//                    print(myStringDict!["FormattedTranscription"]!)
-//
-//                }
-//                self.recordResponse(response: responseData)
-//                self.dismissSearch()
-//            }
-//        )
-//    }
+    //    func recordHoundify () {
+    //        Houndify.instance().presentListeningViewController(in: self,
+    //                                                           from: nil,
+    //                                                           style: nil,
+    //                                                           requestInfo: [:],
+    //                                                           responseHandler:
+    //            { (error: Error?, response: Any?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
+    //
+    //                var responseData : String = ""
+    //                if  let serverData = response as? HoundDataHoundServer,
+    //                    let commandResult = serverData.allResults?.firstObject() as? HoundDataCommandResult,
+    //                    let nativeData = commandResult["NativeData"]
+    //                {
+    //                    let myStringDict = nativeData as? [String : AnyObject]
+    //                    responseData = myStringDict!["FormattedTranscription"]! as! String
+    //                    print(myStringDict!["FormattedTranscription"]!)
+    //
+    //                }
+    //                self.recordResponse(response: responseData)
+    //                self.dismissSearch()
+    //            }
+    //        )
+    //    }
     
     func queryHoundify(aQuery: String) {
         HoundTextSearch.instance().search(withQuery: aQuery, requestInfo: nil, completionHandler:
             { (error: Error?, myQuery: String, houndServer: HoundDataHoundServer?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
-                    if houndServer != nil, let dictionary = dictionary, let response = houndServer {
-                        if let commandResult = response.allResults?.firstObject() as? HoundDataCommandResult {
-                            print(commandResult["SpokenResponse"]!)
-                            self.translateResultToLanguage(text: commandResult["SpokenResponse"]! as! String)
-                        }
+                if houndServer != nil, let dictionary = dictionary, let response = houndServer {
+                    if let commandResult = response.allResults?.firstObject() as? HoundDataCommandResult {
+                        print(commandResult["SpokenResponse"]!)
+                        self.translateResultToLanguage(text: commandResult["SpokenResponse"]! as! String)
+                    }
                     
                 }
-            }
+        }
         )
     }
     
+    //    MARK:- PICKER PROTOCOL STUBS
     
-//  MARK:- IB ACTIONS
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 0
+    }
+    
+    // The data to return for the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return ""
+        //        if (pickerView == privacyPicker) {
+        //            return privacyPickerData[row]
+        //        } else {
+        //            return rangePickerData[row]
+        //        }
+    }
+    
+    // Catpure the picker view selection
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //        if (pickerView == privacyPicker) {
+        //            privacyChosen = privacyPickerData[row]
+        //            return
+        //        } else {
+        //            rangeChosen = rangePickerData[row]
+        //            locManager.requestLocation()
+        //            print("desired: \(self.currentLocation)")
+        //            updateLocationAccuracy()
+        //            return
+        //        }
+    }
+    
+    
+    
+    //  MARK:- IB ACTIONS
     
     @IBAction func recordText () {
         
@@ -309,13 +392,14 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBAction func cancelResponse () {
         self.hideResponseUI()
+        self.queryResponse = ""
         self.recordedResponse.text = ""
     }
     
     @IBAction func sendResponse () {
         let newChat = ChatMessage(_userId: ChatConstantsAndFunctions.userId, _message: self.recordedResponse.text, _chatId: String(describing: ChatMessage.fetchChats().count))
-        self.queryHoundify(aQuery: self.translatedText)
         ChatConstantsAndFunctions.newChats.append(newChat)
+        self.queryHoundify(aQuery: self.translatedText)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
         self.hideResponseUI()
     }
