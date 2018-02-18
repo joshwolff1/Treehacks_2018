@@ -20,7 +20,6 @@ class ChatTableViewController : UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(loadChats), name: NSNotification.Name(rawValue: "loadChats"), object: nil)
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,7 +54,7 @@ class ChatTableViewController : UITableViewController {
     
     func loadConversation() {
         self.chats = []
-        // TEMPORARY CHATS
+        // Includes introductory chats
         self.chats = ChatMessage.fetchChats()
         self.chats = self.chats.removeDuplicates()
         self.tableView.reloadData()
@@ -63,7 +62,7 @@ class ChatTableViewController : UITableViewController {
     
     @objc func loadChats(notification: NSNotification) {
         self.chats = []
-        // TEMPORARY CHATS
+        // Includes introductory chats
         self.chats = ChatMessage.fetchChats()
         OperationQueue.main.addOperation {
             self.tableView.reloadData()

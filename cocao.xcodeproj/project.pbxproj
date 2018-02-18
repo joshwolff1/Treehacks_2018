@@ -10,7 +10,6 @@
 		5551FA6E0BA292629CE1462E /* Pods_cocaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */; };
 		83BE4C6E20396D9A0055F54F /* CognitoConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83BE4C6D20396D9A0055F54F /* CognitoConfig.plist */; };
 		83BE4C7020396E360055F54F /* awslist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BE4C6F20396E360055F54F /* awslist.swift */; };
-		A7099D7B20394ECF0072E3BF /* MicrosoftTranslateAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7099D7A20394ECF0072E3BF /* MicrosoftTranslateAPI.swift */; };
 		A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */; };
 		A783B2FD2038A4FC00B5730A /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FC2038A4FC00B5730A /* ChatCell.swift */; };
 		A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */; };
@@ -56,7 +55,6 @@
 		83BE4C6D20396D9A0055F54F /* CognitoConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CognitoConfig.plist; sourceTree = "<group>"; };
 		83BE4C6F20396E360055F54F /* awslist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = awslist.swift; sourceTree = "<group>"; };
 		87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.release.xcconfig"; sourceTree = "<group>"; };
-		A7099D7A20394ECF0072E3BF /* MicrosoftTranslateAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftTranslateAPI.swift; sourceTree = "<group>"; };
 		A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		A783B2FC2038A4FC00B5730A /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCellStruct.swift; sourceTree = "<group>"; };
@@ -162,13 +160,12 @@
 		A7D9D54020381B4300DEDF54 /* cocao */ = {
 			isa = PBXGroup;
 			children = (
+				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
+				A7D9D54320381B4300DEDF54 /* InitialViewController.swift */,
 				A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */,
 				A7D9D54120381B4300DEDF54 /* AppDelegate.swift */,
 				83BE4C6D20396D9A0055F54F /* CognitoConfig.plist */,
 				83BE4C6F20396E360055F54F /* awslist.swift */,
-				A7D9D54320381B4300DEDF54 /* InitialViewController.swift */,
-				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
-				A7099D7A20394ECF0072E3BF /* MicrosoftTranslateAPI.swift */,
 				A783B3032038BE5000B5730A /* TempHound.swift */,
 				A783B3412038CE6800B5730A /* BotInteractionViewController.swift */,
 				A783B3002038B1AA00B5730A /* Chat */,
@@ -543,7 +540,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7099D7B20394ECF0072E3BF /* MicrosoftTranslateAPI.swift in Sources */,
 				83BE4C7020396E360055F54F /* awslist.swift in Sources */,
 				A7D9D54420381B4300DEDF54 /* InitialViewController.swift in Sources */,
 				A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */,
@@ -721,6 +717,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W24B4F4VA;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -731,6 +728,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jw1.cocao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "cocao/cocao-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -744,6 +742,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W24B4F4VA;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -754,6 +753,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jw1.cocao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "cocao/cocao-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -125,15 +125,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QOz-4c-L4F">
-                                <rect key="frame" x="68" y="94" width="240" height="283"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="cvZ-o7-dEJ"/>
-                                    <constraint firstAttribute="height" constant="283" id="uun-Lk-bhP"/>
-                                </constraints>
-                            </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tIt-DM-13n">
-                                <rect key="frame" x="0.0" y="385" width="375" height="192"/>
+                                <rect key="frame" x="0.0" y="103" width="375" height="474"/>
                                 <connections>
                                     <segue destination="aAc-iK-4hm" kind="embed" identifier="segueEmbedChat" id="mDk-hC-EnO"/>
                                 </connections>
@@ -176,7 +169,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALh-Ne-gWR">
-                                <rect key="frame" x="68" y="385" width="240" height="179.5"/>
+                                <rect key="frame" x="68" y="385" width="240" height="180"/>
                                 <color key="backgroundColor" red="0.12549019610000001" green="0.58823529409999997" blue="0.95294117649999999" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="4Hh-7t-QIX"/>
@@ -210,18 +203,24 @@ Yo quiero tenerte</string>
                                     <action selector="stopRecording" destination="e1t-wn-uPl" eventType="touchUpInside" id="OhR-qE-r6s"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6td-2F-FnX">
+                                <rect key="frame" x="244" y="35" width="115" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="QOV-qg-kmD"/>
+                                    <constraint firstAttribute="width" constant="115" id="k36-tt-V2M"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tIt-DM-13n" firstAttribute="top" secondItem="6td-2F-FnX" secondAttribute="bottom" constant="17" id="3IT-GA-ya7"/>
                             <constraint firstItem="xgY-2F-tYJ" firstAttribute="top" secondItem="tIt-DM-13n" secondAttribute="bottom" constant="8" id="4rk-e7-KZl"/>
                             <constraint firstItem="wie-uW-x44" firstAttribute="top" secondItem="lG6-hU-xzt" secondAttribute="top" constant="373" id="5f7-DV-G1z"/>
                             <constraint firstItem="c2V-WZ-Xy5" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="16" id="7Ih-Ya-3n5"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="bottom" secondItem="wie-uW-x44" secondAttribute="bottom" constant="239" id="AqP-yM-9Nf"/>
-                            <constraint firstItem="ALh-Ne-gWR" firstAttribute="top" secondItem="QOz-4c-L4F" secondAttribute="bottom" constant="8" id="DfT-KI-ULm"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="bottom" secondItem="c2V-WZ-Xy5" secondAttribute="bottom" constant="242" id="GL6-NM-RTj"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="xgY-2F-tYJ" secondAttribute="trailing" constant="160" id="HQq-td-xuW"/>
                             <constraint firstItem="tIt-DM-13n" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" id="IyP-qJ-mFf"/>
-                            <constraint firstItem="tIt-DM-13n" firstAttribute="top" secondItem="QOz-4c-L4F" secondAttribute="bottom" constant="8" id="Lzj-mj-0nx"/>
                             <constraint firstItem="kI1-Tk-Zje" firstAttribute="top" secondItem="7OO-kN-Bt4" secondAttribute="top" constant="36" id="POm-4c-EEL"/>
                             <constraint firstItem="ALh-Ne-gWR" firstAttribute="leading" secondItem="c2V-WZ-Xy5" secondAttribute="trailing" constant="22" id="Pea-g0-YcE"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="bottom" secondItem="xgY-2F-tYJ" secondAttribute="bottom" constant="20" id="Qgn-Y0-tDL"/>
@@ -230,24 +229,24 @@ Yo quiero tenerte</string>
                             <constraint firstItem="xgY-2F-tYJ" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="161" id="RXq-nK-tpD"/>
                             <constraint firstItem="wie-uW-x44" firstAttribute="leading" secondItem="ALh-Ne-gWR" secondAttribute="trailing" constant="21" id="S7p-M3-KGp"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="tIt-DM-13n" secondAttribute="trailing" id="bEr-a0-6Gv"/>
-                            <constraint firstItem="QOz-4c-L4F" firstAttribute="top" secondItem="lG6-hU-xzt" secondAttribute="top" constant="74" id="fkC-8Q-x3D"/>
+                            <constraint firstItem="ALh-Ne-gWR" firstAttribute="top" secondItem="lG6-hU-xzt" secondAttribute="top" constant="365" id="emz-PN-KQb"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="uem-ot-iBJ" secondAttribute="trailing" constant="160" id="gHp-AG-HHj"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="bottom" secondItem="uem-ot-iBJ" secondAttribute="bottom" constant="20" id="kg9-sb-sxo"/>
                             <constraint firstItem="uem-ot-iBJ" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="161" id="lIl-Iv-NkF"/>
                             <constraint firstItem="uem-ot-iBJ" firstAttribute="width" secondItem="uem-ot-iBJ" secondAttribute="height" multiplier="27:31" id="lrK-5N-8XR"/>
-                            <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="QOz-4c-L4F" secondAttribute="trailing" constant="67" id="oTJ-2c-JCz"/>
+                            <constraint firstItem="6td-2F-FnX" firstAttribute="top" secondItem="lG6-hU-xzt" secondAttribute="top" constant="15" id="nUk-nJ-fIg"/>
+                            <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="6td-2F-FnX" secondAttribute="trailing" constant="16" id="nWE-6W-9QR"/>
                             <constraint firstItem="kI1-Tk-Zje" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="16" id="p3C-1p-7dT"/>
                             <constraint firstItem="c2V-WZ-Xy5" firstAttribute="top" secondItem="kI1-Tk-Zje" secondAttribute="bottom" constant="309" id="spM-1q-5gi"/>
-                            <constraint firstItem="QOz-4c-L4F" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="68" id="tNp-KU-6BY"/>
-                            <constraint firstItem="tIt-DM-13n" firstAttribute="top" secondItem="QOz-4c-L4F" secondAttribute="bottom" constant="8" id="z8C-qM-JbA"/>
+                            <constraint firstItem="tIt-DM-13n" firstAttribute="top" secondItem="kI1-Tk-Zje" secondAttribute="bottom" constant="17" id="wSH-Ul-imU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lG6-hU-xzt"/>
                     </view>
                     <navigationItem key="navigationItem" id="La9-qe-GFo"/>
                     <connections>
-                        <outlet property="botGraphic" destination="QOz-4c-L4F" id="1Jx-qz-MUK"/>
                         <outlet property="cancelButton" destination="c2V-WZ-Xy5" id="cO0-Dm-K7u"/>
                         <outlet property="chatContent" destination="tIt-DM-13n" id="jGu-re-8x0"/>
+                        <outlet property="languagePicker" destination="6td-2F-FnX" id="UyT-dc-hAm"/>
                         <outlet property="logoImage" destination="kI1-Tk-Zje" id="Ryf-hz-PqF"/>
                         <outlet property="microphoneButton" destination="xgY-2F-tYJ" id="oW3-NM-BxW"/>
                         <outlet property="recordedResponse" destination="ALh-Ne-gWR" id="Wld-xh-Qw2"/>
@@ -279,7 +278,7 @@ Yo quiero tenerte</string>
             <objects>
                 <tableViewController id="aAc-iK-4hm" customClass="ChatTableViewController" customModule="cocao" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="T3s-PR-mCA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="192"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="474"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

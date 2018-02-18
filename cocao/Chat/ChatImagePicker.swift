@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// THIS CLASS IS NO LONGER USED WITHIN THE PROJECT BUT MAY BE NECESSARY FOR COMPILATION, TEMPORARILY.
 class ChatImagePicker: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
@@ -30,7 +31,6 @@ class ChatImagePicker: UIViewController, UIImagePickerControllerDelegate, UINavi
         picker.sourceType = UIImagePickerControllerSourceType.camera
         picker.cameraDevice = UIImagePickerControllerCameraDevice.front
         picker.showsCameraControls = false
-        //picker.takePicture()
         self.present(picker, animated: false, completion: picker.takePicture)
     }
     
@@ -39,8 +39,6 @@ class ChatImagePicker: UIViewController, UIImagePickerControllerDelegate, UINavi
         var currentImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         currentImage = UIImage(data: UIImagePNGRepresentation(currentImage)!)!
-        // send current image
-//        ChatConstantsAndFunctions.imagesTaken.append(currentImage)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "collectImage"), object: nil)
         
         picker.dismiss(animated: true, completion:  nil)

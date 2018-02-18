@@ -14,6 +14,7 @@ import ROGoogleTranslate
 import CoreLocation
 import AVFoundation
 
+// This is the main class, used for the chat view controller.
 class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegate, SFSpeechRecognizerDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, CLLocationManagerDelegate {
     
     @IBOutlet weak var logoImage: UIImageView!
@@ -27,11 +28,9 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.spanishMicrosoft))
-    private let languageChosen = ChatConstantsAndFunctions.spanishMicrosoft
-    // ADD PICKER AND DELEGATE
-    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
-    private var recognitionTask: SFSpeechRecognitionTask?
+    @IBOutlet weak var languagePicker: UIPickerView!
+    
+    private var languageChosen = ChatConstantsAndFunctions.languageChosen
     
     private var queryText = ""
     private var translatedText = ""
@@ -50,7 +49,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.setUpSpeechRecognition()
         
         self.setUpLocation()
-        
+        self.setUpPickerView()
     }
     
     //    MARK:- LOCATION PROTOCOL AND RELEVANT CODE
@@ -93,8 +92,9 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func setUpSpeechRecognition () {
         
+      
         self.microphoneButton.isEnabled = false  //2
-        self.speechRecognizer?.delegate = self  //3
+        //3
         
         SFSpeechRecognizer.requestAuthorization { (authStatus) in  //4
             
@@ -143,6 +143,12 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func startRecording() {
         
+        var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+        var recognitionTask: SFSpeechRecognitionTask?
+        
+        let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.appleCodeDictionary[self.languageChosen]!))
+        speechRecognizer?.delegate = self
+        
         //        self.isFinalQuery = false
         
         let audioEngine = AVAudioEngine()
@@ -161,16 +167,16 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             print("audioSession properties weren't set because of an error.")
         }
         
-        self.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
         let inputNode = audioEngine.inputNode
-        guard let recognitionRequest = recognitionRequest else {
+        guard let recognitionRequestNew = recognitionRequest else {
             fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
         }
         
-        recognitionRequest.shouldReportPartialResults = true
+        recognitionRequestNew.shouldReportPartialResults = true
         
-        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest!, resultHandler: { (result, error) in
             
             var isFinal = false
             
@@ -185,19 +191,23 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             }
             // error != nil
             if self.isFinalQuery {
+                do {try audioSession.setActive(false) } catch {
+                
+                }
                 audioEngine.stop()
+                
                 print("didStop")
                 inputNode.removeTap(onBus: 0)
-                
-                self.recognitionRequest = nil
-                self.recognitionTask = nil
+                recognitionRequest = nil
+                recognitionTask = nil
                 self.microphoneButton.isEnabled = true
+                
             }
         })
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer, when) in
-            self.recognitionRequest?.append(buffer)
+            recognitionRequest?.append(buffer)
         }
         
         audioEngine.prepare()
@@ -219,17 +229,8 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     func translateQueryToEnglish (text: String) {
-        //        let error : NSError?
-        //        let result : String?
-        //        let urlResponse : URLResponse?
-        //        print("TRANSLATING QUERY")
-        //        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
-        //            print("completion handler")
-        //            print("\(String(describing: result))")
-        //        }
-        
-        var params = ROGoogleTranslateParams(source: self.languageChosen,
-                                             target: ChatConstantsAndFunctions.englishLanguageMicrosoft,
+        let params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.googleCodeDictionary[self.languageChosen]!,
+                                             target: ChatConstantsAndFunctions.englishLanguageGoogle,
                                              text:   text)
         
         let translator = ROGoogleTranslate()
@@ -243,17 +244,9 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     }
     
     func translateResultToLanguage (text: String) {
-        //        let error : NSError?
-        //        let result : String?
-        //        let urlResponse : URLResponse?
-        //        print("TRANSLATING QUERY")
-        //        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
-        //            print("completion handler")
-        //            print("\(String(describing: result))")
-        //        }
         
-        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.englishLanguageMicrosoft,
-                                             target: self.languageChosen,
+        let params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.englishLanguageGoogle,
+                                             target: ChatConstantsAndFunctions.googleCodeDictionary[self.languageChosen]!,
                                              text:   text)
         
         let translator = ROGoogleTranslate()
@@ -264,7 +257,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             let queryResponseChat = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: result, _chatId: String(describing: ChatMessage.fetchChats().count))
             ChatConstantsAndFunctions.newChats.append(queryResponseChat)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
-            self.textToSpeech(text: result, language: self.languageChosen)
+            self.textToSpeech(text: result, language: ChatConstantsAndFunctions.appleCodeDictionary[self.languageChosen]!)
             print("WITHIN TRANSLATION FUNCITON")
             print("Translation: \(result)")
         }
@@ -280,37 +273,20 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         
     }
     
-    //    func recordHoundify () {
-    //        Houndify.instance().presentListeningViewController(in: self,
-    //                                                           from: nil,
-    //                                                           style: nil,
-    //                                                           requestInfo: [:],
-    //                                                           responseHandler:
-    //            { (error: Error?, response: Any?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
-    //
-    //                var responseData : String = ""
-    //                if  let serverData = response as? HoundDataHoundServer,
-    //                    let commandResult = serverData.allResults?.firstObject() as? HoundDataCommandResult,
-    //                    let nativeData = commandResult["NativeData"]
-    //                {
-    //                    let myStringDict = nativeData as? [String : AnyObject]
-    //                    responseData = myStringDict!["FormattedTranscription"]! as! String
-    //                    print(myStringDict!["FormattedTranscription"]!)
-    //
-    //                }
-    //                self.recordResponse(response: responseData)
-    //                self.dismissSearch()
-    //            }
-    //        )
-    //    }
-    
     func queryHoundify(aQuery: String) {
         HoundTextSearch.instance().search(withQuery: aQuery, requestInfo: nil, completionHandler:
             { (error: Error?, myQuery: String, houndServer: HoundDataHoundServer?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
                 if houndServer != nil, let dictionary = dictionary, let response = houndServer {
                     if let commandResult = response.allResults?.firstObject() as? HoundDataCommandResult {
                         print(commandResult["SpokenResponse"]!)
-                        self.translateResultToLanguage(text: commandResult["SpokenResponse"]! as! String)
+                        if (self.languageChosen != ChatConstantsAndFunctions.englishLanguage) {
+                            self.translateResultToLanguage(text: commandResult["SpokenResponse"]! as! String)
+                        } else {
+                            let queryResponseChat = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: commandResult["SpokenResponse"]! as! String, _chatId: String(describing: ChatMessage.fetchChats().count))
+                            ChatConstantsAndFunctions.newChats.append(queryResponseChat)
+                            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
+                            self.textToSpeech(text: commandResult["SpokenResponse"]! as! String, language: ChatConstantsAndFunctions.appleCodeDictionary[self.languageChosen]!)
+                        }
                     }
                     
                 }
@@ -320,36 +296,32 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     //    MARK:- PICKER PROTOCOL STUBS
     
+    func setUpPickerView () {
+        self.languagePicker.delegate = self
+        self.languagePicker.dataSource = self
+        self.languagePicker.backgroundColor = UIColor.lightGray
+        self.languagePicker.layer.cornerRadius = 5
+        self.languagePicker.layer.masksToBounds = true
+    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 0
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 0
+        return ChatConstantsAndFunctions.languages.count
     }
     
     // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ""
-        //        if (pickerView == privacyPicker) {
-        //            return privacyPickerData[row]
-        //        } else {
-        //            return rangePickerData[row]
-        //        }
+        return ChatConstantsAndFunctions.languages[row]
     }
     
     // Catpure the picker view selection
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //        if (pickerView == privacyPicker) {
-        //            privacyChosen = privacyPickerData[row]
-        //            return
-        //        } else {
-        //            rangeChosen = rangePickerData[row]
-        //            locManager.requestLocation()
-        //            print("desired: \(self.currentLocation)")
-        //            updateLocationAccuracy()
-        //            return
-        //        }
+        self.languageChosen = ChatConstantsAndFunctions.languages[row]
+        print("\(self.languageChosen)")
+        return
     }
     
     
@@ -371,6 +343,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.stopRecordingButton.isHidden = true
         self.isFinalQuery = true
         
+        
         print("TRANSLATION")
         print(self.queryText)
         
@@ -378,7 +351,11 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.cancelButton.isHidden = false
         self.sendButton.isHidden = false
         
-        self.translateQueryToEnglish(text: self.queryText)
+        if (self.languageChosen != ChatConstantsAndFunctions.englishLanguage) {
+            self.translateQueryToEnglish(text: self.queryText)
+        } else {
+            self.translatedText = self.queryText
+        }
     }
     
     fileprivate func dismissSearch() {
