@@ -21,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Hound.setClientID("ewb8Zfanqv_n2FmfW5bObA==")
         Hound.setClientKey("gsqdIB8K6qMLx3dNNW9rKTnxPZc9YE4HIVGBGIcWVxjaVs78V5IJi3aJDyk3sOXZ90PXmEjDvJbccRVMNgiTnQ==")
+        let credentialProvider = AWSCognitoCredentialsProvider(regionType: AwsRegion, identityPoolId: CognitoIdentityPoolId)
+        
         return true
     }
 

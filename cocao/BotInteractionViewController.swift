@@ -12,6 +12,10 @@ import Speech
 import HoundifySDK
 import ROGoogleTranslate
 
+// AWS Polly Imports
+import AWSPolly
+import AVFoundation
+
 class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegate, SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var logoImage: UIImageView!
@@ -25,8 +29,8 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.spanishMicrosoft))
-    private let languageChosen = ChatConstantsAndFunctions.spanishMicrosoft
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.koreanMicrosoft))
+    private let languageChosen = ChatConstantsAndFunctions.koreanMicrosoft
     // ADD PICKER AND DELEGATE
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?

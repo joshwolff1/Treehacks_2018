@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>clientSecret</key>
+	<string></string>
+	<key>clientId</key>
+	<string></string>
+	<key>appId</key>
+	<string>cocao</string>
+	<key>identityPoolId</key>
+	<string>us-east-2:3f6023c5-abe3-4169-9e67-a1c094db1d95</string>
+	<key>poolId</key>
+	<string></string>
+	<key>region</key>
+	<string>us-east-1</string>
+</dict>
+</plist>

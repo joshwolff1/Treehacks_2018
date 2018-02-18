@@ -1,5 +1,7 @@
 PODS:
   - AWSCore (2.6.12)
+  - AWSPolly (2.6.12):
+    - AWSCore (= 2.6.12)
   - AWSRekognition (2.6.12):
     - AWSCore (= 2.6.12)
   - BoringSSL (9.2):
@@ -187,6 +189,7 @@ PODS:
   - ROGoogleTranslate (0.0.5)
 
 DEPENDENCIES:
+  - AWSPolly (~> 2.6.0)
   - AWSRekognition
   - Firebase/AdMob
   - Firebase/Auth
@@ -205,6 +208,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AWSCore: d0d6e4f6831754aaf98058d2306a016ae71510fe
+  AWSPolly: acfa17a93ed9c3350e27204126359de5fb51aac5
   AWSRekognition: 5d0d49f63b7075b86ef01f2c73c895793ac769ac
   BoringSSL: f3d6b8ce199b9c450a8cfc14895d07a2627fc232
   Firebase: 632216af3ed7f31e3be34776947fdc7546cfb572
@@ -239,6 +243,6 @@ SPEC CHECKSUMS:
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   ROGoogleTranslate: 344d579487c21af1ae54138baa68605b861ba84e
 
-PODFILE CHECKSUM: b37513bf1030a7a30823a2df0b3a2090804d3ad4
+PODFILE CHECKSUM: 6f8e23a197d62921a4c750a4a68e1d69bfd54b47
 
 COCOAPODS: 1.4.0

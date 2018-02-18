@@ -5,6 +5,7 @@ target 'cocao' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'AWSRekognition'
+  pod 'AWSPolly', '~> 2.6.0'
   
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
@@ -19,13 +20,13 @@ target 'cocao' do
   pod 'Firebase/Performance'
   pod 'Firebase/Firestore'
   
+  
   pod 'HoundifySDK'
   
   pod 'ROGoogleTranslate'
 
   # Pods for cocao
-  
-  
+
 
   target 'cocaoTests' do
     inherit! :search_paths
