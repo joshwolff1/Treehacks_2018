@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5551FA6E0BA292629CE1462E /* Pods_cocaoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */; };
+		83BE4C6A203941EA0055F54F /* JSONAttributedFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 83BE4C69203941EA0055F54F /* JSONAttributedFormatter.m */; };
 		A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */; };
 		A783B2FD2038A4FC00B5730A /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FC2038A4FC00B5730A /* ChatCell.swift */; };
 		A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */; };
@@ -49,6 +50,9 @@
 		33A2927F8CE5C976EB9651C6 /* Pods-cocao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.debug.xcconfig"; sourceTree = "<group>"; };
 		68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		776BE800066ADABF12B9BC4E /* Pods-cocaoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoUITests/Pods-cocaoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		83BE4C67203941E80055F54F /* cocao-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cocao-Bridging-Header.h"; sourceTree = "<group>"; };
+		83BE4C68203941E90055F54F /* JSONAttributedFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONAttributedFormatter.h; path = "../../../Downloads/Houndify_Sample/HoundifySDK Sample App (Swift)/JSONAttributedFormatter.h"; sourceTree = "<group>"; };
+		83BE4C69203941EA0055F54F /* JSONAttributedFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONAttributedFormatter.m; path = "../../../Downloads/Houndify_Sample/HoundifySDK Sample App (Swift)/JSONAttributedFormatter.m"; sourceTree = "<group>"; };
 		87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocao.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocao/Pods-cocao.release.xcconfig"; sourceTree = "<group>"; };
 		A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		A783B2FC2038A4FC00B5730A /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
@@ -161,10 +165,13 @@
 				A7D9D54520381B4300DEDF54 /* Main.storyboard */,
 				A783B3032038BE5000B5730A /* TempHound.swift */,
 				A783B3412038CE6800B5730A /* BotInteractionViewController.swift */,
+				83BE4C68203941E90055F54F /* JSONAttributedFormatter.h */,
+				83BE4C69203941EA0055F54F /* JSONAttributedFormatter.m */,
 				A783B3002038B1AA00B5730A /* Chat */,
 				A7D9D54820381B4300DEDF54 /* Assets.xcassets */,
 				A7D9D54A20381B4300DEDF54 /* LaunchScreen.storyboard */,
 				A7D9D54D20381B4300DEDF54 /* Info.plist */,
+				83BE4C67203941E80055F54F /* cocao-Bridging-Header.h */,
 			);
 			path = cocao;
 			sourceTree = "<group>";
@@ -274,6 +281,7 @@
 				TargetAttributes = {
 					A7D9D53D20381B4200DEDF54 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					A7D9D55120381B4300DEDF54 = {
@@ -536,6 +544,7 @@
 				A783B3022038B9B200B5730A /* ChatConstantsAndFunctions.swift in Sources */,
 				A783B3422038CE6800B5730A /* BotInteractionViewController.swift in Sources */,
 				A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */,
+				83BE4C6A203941EA0055F54F /* JSONAttributedFormatter.m in Sources */,
 				A783B2FB2038A4F000B5730A /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,6 +712,7 @@
 			baseConfigurationReference = 33A2927F8CE5C976EB9651C6 /* Pods-cocao.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W24B4F4VA;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -713,6 +723,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jw1.cocao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cocao/cocao-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -723,6 +735,7 @@
 			baseConfigurationReference = 87872401D1226DBD8B3AD4C6 /* Pods-cocao.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4W24B4F4VA;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -733,6 +746,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jw1.cocao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "cocao/cocao-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

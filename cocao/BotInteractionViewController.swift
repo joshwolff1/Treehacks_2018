@@ -172,34 +172,49 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
 //        }
 //    }
     
-    func queryHoundify (query: String) {
-        Houndify.instance().presentListeningViewController(in: self,
-                                                           from: nil,
-                                                           style: nil,
-                                                           requestInfo: [:],
-                                                           responseHandler:
-            { (error: Error?, response: Any?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
-                
-                var responseData : String = ""
-                if  let serverData = response as? HoundDataHoundServer,
-                    let commandResult = serverData.allResults?.firstObject() as? HoundDataCommandResult,
-                    let nativeData = commandResult["NativeData"]
-                {
-                    let myStringDict = nativeData as? [String : AnyObject]
-                    responseData = myStringDict!["FormattedTranscription"]! as! String
-                    print(myStringDict!["FormattedTranscription"]!)
+//    func recordHoundify () {
+//        Houndify.instance().presentListeningViewController(in: self,
+//                                                           from: nil,
+//                                                           style: nil,
+//                                                           requestInfo: [:],
+//                                                           responseHandler:
+//            { (error: Error?, response: Any?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
+//
+//                var responseData : String = ""
+//                if  let serverData = response as? HoundDataHoundServer,
+//                    let commandResult = serverData.allResults?.firstObject() as? HoundDataCommandResult,
+//                    let nativeData = commandResult["NativeData"]
+//                {
+//                    let myStringDict = nativeData as? [String : AnyObject]
+//                    responseData = myStringDict!["FormattedTranscription"]! as! String
+//                    print(myStringDict!["FormattedTranscription"]!)
+//
+//                }
+//                self.recordResponse(response: responseData)
+//                self.dismissSearch()
+//            }
+//        )
+//    }
+    
+    func queryHoundify(aQuery: String) {
+        HoundTextSearch.instance().search(withQuery: aQuery, requestInfo: nil, completionHandler:
+            { (error: Error?, myQuery: String, houndServer: HoundDataHoundServer?, dictionary: [String : Any]?, requestInfo: [String : Any]?) in
+                    if houndServer != nil, let dictionary = dictionary, let response = houndServer {
+                        if let commandResult = response.allResults?.firstObject() as? HoundDataCommandResult {
+                            print(commandResult["SpokenResponse"]!)
+                        }
                     
                 }
-                self.recordResponse(response: responseData)
-                self.dismissSearch()
-        }
+            }
         )
     }
+    
     
 //  MARK:- IB ACTIONS
     
     @IBAction func recordText () {
-        self.startRecording()
+//        self.recordHoundify()
+        self.queryHoundify(aQuery: "Where is the nearest hospital?")
     }
     
     fileprivate func dismissSearch() {
