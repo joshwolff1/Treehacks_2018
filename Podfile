@@ -19,11 +19,9 @@ target 'cocao' do
   pod 'Firebase/Performance'
   pod 'Firebase/Firestore'
   
-  pod 'ROGoogleTranslate'
-  
   pod 'HoundifySDK'
-
-pod 'ROGoogleTranslate'
+  
+  pod 'ROGoogleTranslate'
 
   # Pods for cocao
   

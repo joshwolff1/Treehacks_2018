@@ -10,23 +10,29 @@ import Foundation
 import UIKit
 import Speech
 import HoundifySDK
+import ROGoogleTranslate
 
 class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegate, SFSpeechRecognizerDelegate {
     
     @IBOutlet weak var logoImage: UIImageView!
     @IBOutlet weak var botGraphic: UIImageView!
     @IBOutlet weak var chatContent : UIView!
+    
     @IBOutlet weak var microphoneButton: UIButton!
+    @IBOutlet weak var stopRecordingButton: UIButton!
     
     @IBOutlet weak var recordedResponse: UILabel!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "ko_KR"))  // CHANGE WITH LANGUAGE LATER
-    
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.languageChosenApple))
+    // ADD PICKER AND DELEGATE
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
-    private let audioEngine = AVAudioEngine()
+    
+    private var queryText = ""
+    
+    private var isFinalQuery = false
 
     override func viewDidLoad() {
         
@@ -65,6 +71,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func hideResponseUI () {
         self.recordedResponse.isHidden = true
+        self.stopRecordingButton.isHidden = true
         self.sendButton.isHidden = true
         self.cancelButton.isHidden = true
         self.chatContent.isHidden = false
@@ -91,6 +98,10 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func startRecording() {
         
+        self.isFinalQuery = false
+        
+        let audioEngine = AVAudioEngine()
+        
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
@@ -108,7 +119,6 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
         
         let inputNode = audioEngine.inputNode
-        
         guard let recognitionRequest = recognitionRequest else {
             fatalError("Unable to create an SFSpeechAudioBufferRecognitionRequest object")
         }
@@ -124,15 +134,17 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
                 print("HERE IS THE RESULT")
                 print("\(result?.bestTranscription.formattedString)")
                 isFinal = (result?.isFinal)!
+                
+                self.queryText = (result?.bestTranscription.formattedString)!
             }
-            
-            if error != nil || isFinal {
-                self.audioEngine.stop()
+            // error != nil
+            if self.isFinalQuery {
+                audioEngine.stop()
+                print("didStop")
                 inputNode.removeTap(onBus: 0)
                 
                 self.recognitionRequest = nil
                 self.recognitionTask = nil
-                
                 self.microphoneButton.isEnabled = true
             }
         })
@@ -160,17 +172,29 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         }
     }
     
-//    func translateQueryToEnglish () {
-//        var params = ROGoogleTranslateParams(source: "en",
-//                                             target: "en",
-//                                             text:   "Here you can add your sentence you want to be translated")
-//
-//        let translator = ROGoogleTranslate(with: "API Key here")
-//
-//        translator.translate(params: params) { (result) in
-//            print("Translation: \(result)")
+    func translateQueryToEnglish (text: String) {
+//        let error : NSError?
+//        let result : String?
+//        let urlResponse : URLResponse?
+//        print("TRANSLATING QUERY")
+//        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
+//            print("completion handler")
+//            print("\(String(describing: result))")
 //        }
-//    }
+        
+        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.languageChosenGoogle,
+                                             target: ChatConstantsAndFunctions.englishLanguageMicrosoft,
+                                             text:   text)
+
+        let translator = ROGoogleTranslate()
+        translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
+        print("\(params)")
+        translator.translate(params: params) { (result) in
+            self.queryHoundify(query: result)
+            print("WITHIN TRANSLATION FUNCITON")
+            print("Translation: \(result)")
+        }
+    }
     
     func queryHoundify (query: String) {
         Houndify.instance().presentListeningViewController(in: self,
@@ -199,7 +223,22 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
 //  MARK:- IB ACTIONS
     
     @IBAction func recordText () {
+        
+        self.queryText = ""
+        self.isFinalQuery = false
+        
+        self.microphoneButton.isHidden = true
+        self.stopRecordingButton.isHidden = false
         self.startRecording()
+    }
+    
+    @IBAction func stopRecording () {
+        self.microphoneButton.isHidden = false
+        self.stopRecordingButton.isHidden = true
+        self.isFinalQuery = true
+        print("TRANSLATION")
+        print(self.queryText)
+        self.translateQueryToEnglish(text: self.queryText)
     }
     
     fileprivate func dismissSearch() {

@@ -196,6 +196,20 @@ Yo quiero tenerte</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uem-ot-iBJ">
+                                <rect key="frame" x="161" y="585" width="54" height="62"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="62" id="3QH-TK-M96"/>
+                                    <constraint firstAttribute="width" constant="54" id="Knv-7B-WH1"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="PBB-Uc-BpY"/>
+                                    <constraint firstAttribute="width" secondItem="uem-ot-iBJ" secondAttribute="height" multiplier="27:31" id="XpU-3M-cW6"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="62" id="iea-Uv-Iku"/>
+                                </constraints>
+                                <state key="normal" image="microphoneRecording"/>
+                                <connections>
+                                    <action selector="stopRecording" destination="e1t-wn-uPl" eventType="touchUpInside" id="OhR-qE-r6s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,10 +226,15 @@ Yo quiero tenerte</string>
                             <constraint firstItem="ALh-Ne-gWR" firstAttribute="leading" secondItem="c2V-WZ-Xy5" secondAttribute="trailing" constant="22" id="Pea-g0-YcE"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="bottom" secondItem="xgY-2F-tYJ" secondAttribute="bottom" constant="20" id="Qgn-Y0-tDL"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="wie-uW-x44" secondAttribute="trailing" constant="11" id="Qyb-2o-dkD"/>
+                            <constraint firstItem="uem-ot-iBJ" firstAttribute="top" secondItem="tIt-DM-13n" secondAttribute="bottom" constant="8" id="R3W-yQ-DtX"/>
                             <constraint firstItem="xgY-2F-tYJ" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="161" id="RXq-nK-tpD"/>
                             <constraint firstItem="wie-uW-x44" firstAttribute="leading" secondItem="ALh-Ne-gWR" secondAttribute="trailing" constant="21" id="S7p-M3-KGp"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="tIt-DM-13n" secondAttribute="trailing" id="bEr-a0-6Gv"/>
                             <constraint firstItem="QOz-4c-L4F" firstAttribute="top" secondItem="lG6-hU-xzt" secondAttribute="top" constant="74" id="fkC-8Q-x3D"/>
+                            <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="uem-ot-iBJ" secondAttribute="trailing" constant="160" id="gHp-AG-HHj"/>
+                            <constraint firstItem="lG6-hU-xzt" firstAttribute="bottom" secondItem="uem-ot-iBJ" secondAttribute="bottom" constant="20" id="kg9-sb-sxo"/>
+                            <constraint firstItem="uem-ot-iBJ" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="161" id="lIl-Iv-NkF"/>
+                            <constraint firstItem="uem-ot-iBJ" firstAttribute="width" secondItem="uem-ot-iBJ" secondAttribute="height" multiplier="27:31" id="lrK-5N-8XR"/>
                             <constraint firstItem="lG6-hU-xzt" firstAttribute="trailing" secondItem="QOz-4c-L4F" secondAttribute="trailing" constant="67" id="oTJ-2c-JCz"/>
                             <constraint firstItem="kI1-Tk-Zje" firstAttribute="leading" secondItem="lG6-hU-xzt" secondAttribute="leading" constant="16" id="p3C-1p-7dT"/>
                             <constraint firstItem="c2V-WZ-Xy5" firstAttribute="top" secondItem="kI1-Tk-Zje" secondAttribute="bottom" constant="309" id="spM-1q-5gi"/>
@@ -233,6 +252,7 @@ Yo quiero tenerte</string>
                         <outlet property="microphoneButton" destination="xgY-2F-tYJ" id="oW3-NM-BxW"/>
                         <outlet property="recordedResponse" destination="ALh-Ne-gWR" id="Wld-xh-Qw2"/>
                         <outlet property="sendButton" destination="wie-uW-x44" id="An2-5W-z9C"/>
+                        <outlet property="stopRecordingButton" destination="uem-ot-iBJ" id="18f-Td-O0N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfE-NO-ZVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,6 +406,7 @@ No pares de hacerlo que me gusta así </string>
         <image name="humanIcon" width="400" height="400"/>
         <image name="logo" width="400" height="400"/>
         <image name="microphone" width="400" height="400"/>
+        <image name="microphoneRecording" width="400" height="400"/>
         <image name="sendIcon" width="400" height="400"/>
     </resources>
 </document>

@@ -14,6 +14,8 @@ public class ChatConstantsAndFunctions {
     static let computerId = "COMPUTER"
     static let userId = "joshwolff7"
     
+    static let GOOGLE_API_KEY = "AIzaSyD8YIsBN5wIOpoDQOlVrU_LMwxglP7igjQ"
+    
     static let leftComputerConstant = CGFloat(8)
     static let rightComputerConstant = CGFloat(82)
     
@@ -21,7 +23,18 @@ public class ChatConstantsAndFunctions {
     static let rightHumanConstant = CGFloat(8)
     
     static var newChats : [ChatMessage] = []
-    static var languageChosen = ""
+    
+    static var languageChosenApple = "es_MX"
+    static var languageChosenGoogle = "es"
+    
+    static let englishLanguageApple = "en_US"
+    static let englishLanguageMicrosoft = "en"
+    
+    static let spanishApple = "es_MX"
+    static let spanishMicrosoft = "es"
+    
+    static let koreanApple = "ko_KR"
+    static let koreanMicrosoft = "ko"
     
     class func speaking () {
         

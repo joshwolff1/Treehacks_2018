@@ -245,7 +245,7 @@ Copyright 2018 Google
 
 ## FirebaseInstanceID
 
-Copyright 2017 Google
+Copyright 2018 Google
 
 ## FirebaseInvites
 
@@ -253,7 +253,7 @@ Copyright 2017 Google
 
 ## FirebaseMessaging
 
-Copyright 2017 Google
+Copyright 2018 Google
 
 ## FirebasePerformance
 
@@ -685,7 +685,7 @@ Copyright 2017 Google
 
 ## Google-Mobile-Ads-SDK
 
-Copyright 2017 Google
+Copyright 2018 Google
 
 ## GoogleAPIClientForREST
 
