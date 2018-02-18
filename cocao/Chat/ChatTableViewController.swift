@@ -32,13 +32,16 @@ class ChatTableViewController : UITableViewController {
     }
     
     func prepareTableView () {
+        
         tableView.allowsSelection = false
         tableView.reloadData()
         tableView.separatorStyle  = .none
         
         tableView.estimatedRowHeight = tableView.rowHeight
         tableView.rowHeight = UITableViewAutomaticDimension
-        loadConversation()
+        
+        self.loadConversation()
+        
     }
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

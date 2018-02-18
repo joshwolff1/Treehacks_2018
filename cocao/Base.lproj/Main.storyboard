@@ -49,7 +49,7 @@
                                 <rect key="frame" x="137" y="466" width="101" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <state key="normal" title="Tap To Enter">
+                                <state key="normal" title="[tap to enter]">
                                     <color key="titleColor" red="0.0" green="0.13725490200000001" blue="0.37647058820000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -142,6 +142,7 @@
                                 <rect key="frame" x="161" y="585" width="54" height="62"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="54" id="8wG-uC-J4P"/>
+                                    <constraint firstAttribute="width" secondItem="xgY-2F-tYJ" secondAttribute="height" multiplier="27:31" id="AIV-VR-UD0"/>
                                     <constraint firstAttribute="height" constant="62" id="Ope-wj-78o"/>
                                 </constraints>
                                 <state key="normal" image="microphone"/>
@@ -184,6 +185,21 @@
             </objects>
             <point key="canvasLocation" x="144.80000000000001" y="661.61919040479768"/>
         </scene>
+        <!--Chat Image Picker-->
+        <scene sceneID="q58-aY-V7v">
+            <objects>
+                <viewController id="gJL-w2-tas" customClass="ChatImagePicker" customModule="cocao" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3vE-7w-t3A">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="zKw-I0-aVG"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N5c-Wi-PWF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982" y="-116"/>
+        </scene>
         <!--Chat Table View Controller-->
         <scene sceneID="ZVq-br-loO">
             <objects>
@@ -205,6 +221,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="3HI-VR-ets"/>
                                                 <constraint firstAttribute="width" secondItem="1Pa-AR-h0I" secondAttribute="height" multiplier="1:1" id="Jd9-Qn-RJb"/>
+                                                <constraint firstAttribute="width" constant="30" id="Nic-Kg-iwh"/>
                                             </constraints>
                                         </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="computerIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NVn-Yp-aLQ">
@@ -212,6 +229,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="NVn-Yp-aLQ" secondAttribute="height" multiplier="1:1" id="SPo-RG-b2I"/>
                                                 <constraint firstAttribute="height" constant="30" id="iug-Pk-pnm"/>
+                                                <constraint firstAttribute="width" constant="30" id="sWJ-Ib-FJo"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9K-KR-FXw">
@@ -290,7 +308,7 @@ No pares de hacerlo que me gusta así </mutableString>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzq-9q-Jxq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981.60000000000002" y="660.71964017991013"/>
+            <point key="canvasLocation" x="982" y="448"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="S70-b4-nih">

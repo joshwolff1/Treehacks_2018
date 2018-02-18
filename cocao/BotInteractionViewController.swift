@@ -15,21 +15,30 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var botGraphic: UIImageView!
     @IBOutlet weak var chatContent : UIView!
     @IBOutlet weak var microphoneButton: UIButton!
-
-    //private var embeddedChatViewController : ChatTableViewController!
     
+    @IBOutlet weak var cameraPicker : UIView!
+
     override func viewDidLoad() {
-        super.viewDidLoad()
-        //self.embeddedChatViewController.loadConversation()
         
+        super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(collectImage), name: NSNotification.Name(rawValue: "collectImage"), object: nil)
+        self.cameraPicker.isHidden = true
+    }
+    
+    @objc func collectImage (image: UIImage) {
+        // later change and send to AWS Rekognition
+        if (ChatConstantsAndFunctions.imagesTaken.count != 0) {
+            self.botGraphic.image = ChatConstantsAndFunctions.imagesTaken[ChatConstantsAndFunctions.imagesTaken.count - 1]
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "segueEmbedChat") {
             let embeddedChatViewController = segue.destination  as! ChatTableViewController
-            embeddedChatViewController.loadConversation()
+            //embeddedChatViewController.loadConversation()
+        }
+        if (segue.identifier == "segueImagePicker") {
             
-            // Pass data to secondViewController before the transition
         }
     }
     

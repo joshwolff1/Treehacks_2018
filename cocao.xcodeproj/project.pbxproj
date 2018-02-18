@@ -22,6 +22,7 @@
 		A7D9D55720381B4300DEDF54 /* cocaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D55620381B4300DEDF54 /* cocaoTests.swift */; };
 		A7D9D56220381B4300DEDF54 /* cocaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D9D56120381B4300DEDF54 /* cocaoUITests.swift */; };
 		A7D9D57020381B8E00DEDF54 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */; };
+		A7DB5810203901430036320A /* ChatImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7DB580F203901430036320A /* ChatImagePicker.swift */; };
 		D41E170C856749D66FBE3546 /* Pods_cocao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E2F8CD8267DEADBE8D9209 /* Pods_cocao.framework */; };
 		D7359309AC5BF31FC703CC4A /* Pods_cocaoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1CAB23C6C433BE419EBE73F /* Pods_cocaoTests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		A7D9D56120381B4300DEDF54 /* cocaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cocaoUITests.swift; sourceTree = "<group>"; };
 		A7D9D56320381B4300DEDF54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7D9D56F20381B8E00DEDF54 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		A7DB580F203901430036320A /* ChatImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImagePicker.swift; sourceTree = "<group>"; };
 		B1CAB23C6C433BE419EBE73F /* Pods_cocaoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocaoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C041AEB545022C702EBC2CA4 /* Pods_cocaoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cocaoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE843995D66052D7A263C357 /* Pods-cocaoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cocaoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cocaoTests/Pods-cocaoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				A783B2FC2038A4FC00B5730A /* ChatCell.swift */,
 				A783B2FE2038B1A400B5730A /* ChatCellStruct.swift */,
+				A7DB580F203901430036320A /* ChatImagePicker.swift */,
 				A783B2FA2038A4F000B5730A /* ChatTableViewController.swift */,
 				A783B3012038B9B200B5730A /* ChatConstantsAndFunctions.swift */,
 			);
@@ -527,6 +530,7 @@
 				A783B2FF2038B1A400B5730A /* ChatCellStruct.swift in Sources */,
 				A783B3042038BE5000B5730A /* TempHound.swift in Sources */,
 				A783B2FD2038A4FC00B5730A /* ChatCell.swift in Sources */,
+				A7DB5810203901430036320A /* ChatImagePicker.swift in Sources */,
 				A783B3022038B9B200B5730A /* ChatConstantsAndFunctions.swift in Sources */,
 				A783B3422038CE6800B5730A /* BotInteractionViewController.swift in Sources */,
 				A7D9D54220381B4300DEDF54 /* AppDelegate.swift in Sources */,

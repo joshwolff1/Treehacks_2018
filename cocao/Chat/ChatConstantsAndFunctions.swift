@@ -7,12 +7,14 @@
 //
 
 import Foundation
-
+import UIKit
 
 public class ChatConstantsAndFunctions {
     
     static let computerId = "COMPUTER"
     static let userId = "joshwolff7"
+    
+    static var imagesTaken : [UIImage] = []
     
     class func speaking () {
         
