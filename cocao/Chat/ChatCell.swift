@@ -41,18 +41,24 @@ class ChatCell: UITableViewCell {
         
         if self.chatMessage._userId != ChatConstantsAndFunctions.computerId {
             
-            let tempText = self.rightTextConstraint.constant
-            let tempImage = self.rightImageToTextConstraint.constant
+            self.rightTextConstraint.constant = ChatConstantsAndFunctions.rightHumanConstant
+            self.rightImageToTextConstraint.constant = ChatConstantsAndFunctions.rightHumanConstant
+          
+            self.leftTextConstraint.constant = ChatConstantsAndFunctions.leftHumanConstant
+            self.leftImageToTextConstraint.constant = ChatConstantsAndFunctions.leftHumanConstant
             
-            self.rightTextConstraint.constant = self.leftTextConstraint.constant
-            self.rightImageToTextConstraint.constant = self.leftImageToTextConstraint.constant
-            
-            self.leftTextConstraint.constant = tempText
-            self.leftImageToTextConstraint.constant = tempImage
-            
+            self.humanIcon.isHidden = false
             self.computerIcon.isHidden = true
 
         } else {
+            
+            self.rightTextConstraint.constant = ChatConstantsAndFunctions.rightComputerConstant
+            self.rightImageToTextConstraint.constant = ChatConstantsAndFunctions.rightComputerConstant
+            
+            self.leftTextConstraint.constant = ChatConstantsAndFunctions.leftComputerConstant
+            self.leftImageToTextConstraint.constant = ChatConstantsAndFunctions.leftComputerConstant
+            
+            self.computerIcon.isHidden = false
             self.humanIcon.isHidden = true
         }
     }

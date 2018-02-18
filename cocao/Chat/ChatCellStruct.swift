@@ -31,6 +31,10 @@ struct ChatMessage {
         let message5 = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: "Lol. Loser.", _chatId: "5")
         chatMessages.append(message5)
         
+        for chat in ChatConstantsAndFunctions.newChats {
+            chatMessages.append(chat)
+        }
+        
         return chatMessages
     }
     

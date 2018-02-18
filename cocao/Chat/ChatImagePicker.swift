@@ -40,7 +40,7 @@ class ChatImagePicker: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         currentImage = UIImage(data: UIImagePNGRepresentation(currentImage)!)!
         // send current image
-        ChatConstantsAndFunctions.imagesTaken.append(currentImage)
+//        ChatConstantsAndFunctions.imagesTaken.append(currentImage)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "collectImage"), object: nil)
         
         picker.dismiss(animated: true, completion:  nil)

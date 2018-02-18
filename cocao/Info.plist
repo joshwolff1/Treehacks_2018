@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Translates speech for web queries.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This uses the camera to analyze the user&apos;s sentiments for medical analysis.</string>
 	<key>CFBundleDevelopmentRegion</key>

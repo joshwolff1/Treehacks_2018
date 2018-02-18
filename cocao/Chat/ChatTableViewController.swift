@@ -17,7 +17,9 @@ class ChatTableViewController : UITableViewController {
         
         super.viewDidLoad()
         self.prepareTableView()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(loadChats), name: NSNotification.Name(rawValue: "loadChats"), object: nil)
+        
         
     }
     
@@ -52,7 +54,6 @@ class ChatTableViewController : UITableViewController {
     }
     
     func loadConversation() {
-        print("this has been called343")
         self.chats = []
         // TEMPORARY CHATS
         self.chats = ChatMessage.fetchChats()
@@ -60,11 +61,11 @@ class ChatTableViewController : UITableViewController {
     }
     
     @objc func loadChats(notification: NSNotification) {
-        print("this has been called")
         self.chats = []
         // TEMPORARY CHATS
         self.chats = ChatMessage.fetchChats()
         self.tableView.reloadData()
+        self.tableView.scrollToRow(at: IndexPath(row: (self.chats.count - 1), section: 0), at: UITableViewScrollPosition.middle, animated: false)
     }
     
 }

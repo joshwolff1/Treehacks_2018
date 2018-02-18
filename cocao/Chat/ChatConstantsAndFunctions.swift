@@ -14,7 +14,14 @@ public class ChatConstantsAndFunctions {
     static let computerId = "COMPUTER"
     static let userId = "joshwolff7"
     
-    static var imagesTaken : [UIImage] = []
+    static let leftComputerConstant = CGFloat(8)
+    static let rightComputerConstant = CGFloat(82)
+    
+    static let leftHumanConstant = CGFloat(82)
+    static let rightHumanConstant = CGFloat(8)
+    
+    static var newChats : [ChatMessage] = []
+    static var languageChosen = ""
     
     class func speaking () {
         

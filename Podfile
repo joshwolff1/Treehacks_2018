@@ -19,10 +19,15 @@ target 'cocao' do
   pod 'Firebase/Performance'
   pod 'Firebase/Firestore'
   
+  pod 'ROGoogleTranslate'
+  
   pod 'HoundifySDK'
-  
-  
+
+pod 'ROGoogleTranslate'
+
   # Pods for cocao
+  
+  
 
   target 'cocaoTests' do
     inherit! :search_paths
