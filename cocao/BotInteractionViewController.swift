@@ -26,6 +26,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var cancelButton: UIButton!
     
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.spanishMicrosoft))
+    private let languageChosen = ChatConstantsAndFunctions.spanishMicrosoft
     // ADD PICKER AND DELEGATE
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -182,7 +183,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
 //            print("\(String(describing: result))")
 //        }
         
-        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.spanishMicrosoft,
+        var params = ROGoogleTranslateParams(source: self.languageChosen,
                                              target: ChatConstantsAndFunctions.englishLanguageMicrosoft,
                                              text:   text)
 
@@ -196,6 +197,34 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
             self.translatedText = result
         }
     }
+    
+    func translateResultToLanguage (text: String) {
+        //        let error : NSError?
+        //        let result : String?
+        //        let urlResponse : URLResponse?
+        //        print("TRANSLATING QUERY")
+        //        AzureMicrosoftTranslator.translate(text: text, toLang: "en") { (result, urlResponse, error) in
+        //            print("completion handler")
+        //            print("\(String(describing: result))")
+        //        }
+        
+        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.englishLanguageMicrosoft,
+                                             target: self.languageChosen,
+                                             text:   text)
+        
+        let translator = ROGoogleTranslate()
+        translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
+        print("\(params)")
+        
+        translator.translate(params: params) { (result) in
+            print("WITHIN TRANSLATION FUNCITON")
+            print("Translation: \(result)")
+            let newChat = ChatMessage(_userId: ChatConstantsAndFunctions.computerId, _message: result, _chatId: String(describing: ChatMessage.fetchChats().count))
+            ChatConstantsAndFunctions.newChats.append(newChat)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
+        }
+    }
+    
     
 //    func recordHoundify () {
 //        Houndify.instance().presentListeningViewController(in: self,
