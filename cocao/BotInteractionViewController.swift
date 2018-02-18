@@ -25,12 +25,13 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.languageChosenApple))
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: ChatConstantsAndFunctions.spanishMicrosoft))
     // ADD PICKER AND DELEGATE
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     
     private var queryText = ""
+    private var translatedText = ""
     
     private var isFinalQuery = false
 
@@ -79,8 +80,6 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     func showResponseUI () {
         self.recordedResponse.isHidden = false
-        self.sendButton.isHidden = false
-        self.cancelButton.isHidden = false
         self.chatContent.isHidden = true
     }
     
@@ -136,6 +135,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
                 isFinal = (result?.isFinal)!
                 
                 self.queryText = (result?.bestTranscription.formattedString)!
+                self.recordResponse(response: self.queryText)
             }
             // error != nil
             if self.isFinalQuery {
@@ -182,7 +182,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
 //            print("\(String(describing: result))")
 //        }
         
-        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.languageChosenGoogle,
+        var params = ROGoogleTranslateParams(source: ChatConstantsAndFunctions.spanishMicrosoft,
                                              target: ChatConstantsAndFunctions.englishLanguageMicrosoft,
                                              text:   text)
 
@@ -190,9 +190,10 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         translator.apiKey = ChatConstantsAndFunctions.GOOGLE_API_KEY
         print("\(params)")
         translator.translate(params: params) { (result) in
-            self.queryHoundify(query: result)
+            self.queryHoundify(aQuery: result)
             print("WITHIN TRANSLATION FUNCITON")
             print("Translation: \(result)")
+            self.translatedText = result
         }
     }
     
@@ -240,10 +241,10 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         
         self.queryText = ""
         self.isFinalQuery = false
-        
         self.microphoneButton.isHidden = true
         self.stopRecordingButton.isHidden = false
         self.startRecording()
+        
     }
     
     @IBAction func stopRecording () {
@@ -252,6 +253,11 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
         self.isFinalQuery = true
         print("TRANSLATION")
         print(self.queryText)
+        
+        self.stopRecordingButton.isHidden = true
+        self.cancelButton.isHidden = false
+        self.sendButton.isHidden = false
+        
         self.translateQueryToEnglish(text: self.queryText)
     }
     
@@ -271,6 +277,7 @@ class BotInteractionViewController: UIViewController, UIGestureRecognizerDelegat
     
     @IBAction func sendResponse () {
         let newChat = ChatMessage(_userId: ChatConstantsAndFunctions.userId, _message: self.recordedResponse.text, _chatId: String(describing: ChatMessage.fetchChats().count))
+        self.queryHoundify(aQuery: self.translatedText)
         ChatConstantsAndFunctions.newChats.append(newChat)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "loadChats"), object: nil)
         self.hideResponseUI()
